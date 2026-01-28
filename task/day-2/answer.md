@@ -8,7 +8,17 @@
 
 ---
 
-### 2. perbedaan antara SH (Shell) dan BASH (Bourne-Again Shell)
+### 2. perbedaan singkat antara SH (Shell) dan BASH (Bourne-Again Shell)
+
+| Aspek                 | SH (Shell)                  | BASH (Bourne-Again Shell)   |
+|-----------------------|-----------------------------|-----------------------------|
+| Generasi              | Shell lama                  | Pengembangan modern dari SH |
+| Fitur                 | Minimal                     | Lengkap & advanced          |
+| Penggunaan Interaktif | Kurang nyaman               | Sangat nyaman               |
+| Array                 | ❌ Tidak mendukung          | ✅ Mendukung                 |
+| Command History       | ❌ Tidak ada                | ✅ Ada                       |
+| Default di Linux      | ❌ Biasanya bukan           | ✅ Umumnya default           |
+| Kegunaan Umum         | Script sederhana & portable | Automation, DevOps, server  |
 
 ---
 
