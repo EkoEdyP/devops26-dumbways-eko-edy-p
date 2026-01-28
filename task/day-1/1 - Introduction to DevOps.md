@@ -209,6 +209,15 @@ brew install --cask virtualbox
 
 
 ### 3. step by step menggunakan IP Address xxx.xxx.xxx.208 untuk server VM kita!
+  - Buka **VirtualBox**
+  - Pilih VM → **Settings**
+  - Masuk ke **Network**
+  - Pilih salah satu:
+    - **Bridged Adapter**
+    - Name: `Wi-Fi (en0)`
+
+![gambar](/asset/set-ip.png)
+
 
 
 ### 4. Pastikan Ubuntu Server kalian ada jaringan dengan test menggunakan command `ping 8.8.8.8` / `ping google.com`
