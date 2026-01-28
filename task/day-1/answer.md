@@ -60,41 +60,41 @@ Hasilnya:
   3. Membuat dan mengkonfigurasi Virtual Machine Baru
   - Buka **Parrarels Desktop**
   - di bagian pilih install windows, linux, or macos from an image file, lalu klik continue
-![gambar](/devops26-dumbways-eko-edy-p/task/day-1/asset/create-new-pd.png)
+![gambar](/task/day-1/asset/create-new-pd.png)
   - tentukan iso nya, lalu klik continue
-![gambar](/devops26-dumbways-eko-edy-p/task/day-1/asset/set-iso.png)
+![gambar](/task/day-1/asset/set-iso.png)
   - isi nama dan pilih lokasi penyimpanan vm, lalu klik create
-![gambar](/devops26-dumbways-eko-edy-p/task/day-1/asset/set-name-and-loc.png)
+![gambar](/task/day-1/asset/set-name-and-loc.png)
   - klik configure untuk menentukan CPUs, Memory, Disk Space, lalu klik continue
-![gambar](/devops26-dumbways-eko-edy-p/task/day-1/asset/set-hardware.png)
+![gambar](/task/day-1/asset/set-hardware.png)
   - star VM dan pilih try or install ubuntu
   - tentukan bahasa
   - tentukan keyboard style
   - pilih tipe instalasi, lalu klik done
-![gambar](/devops26-dumbways-eko-edy-p/task/day-1/asset/install-type.png)
+![gambar](/task/day-1/asset/install-type.png)
   - setting manual network configurtion (sesuaikan), lalu klik done
-![gambar](/devops26-dumbways-eko-edy-p/task/day-1/asset/net-conf.png)
+![gambar](/task/day-1/asset/net-conf.png)
   - skip proxy conf, lalu klik done
   - set default saja mirror conf nya, lalu klik done, dan jika muncul pop up klik continue
   - untuk guide storage configuration saya pilih by default saja, lalu klik done
-![gambar](/devops26-dumbways-eko-edy-p/task/day-1/asset/storage-conf.png)
+![gambar](/task/day-1/asset/storage-conf.png)
   - pastikan summary sudah sesuai dengan yang kita inginkan, lalu klik done dan jika muncul pop up klik continue
   - isi profile configuration, lalu klik done
-![gambar](/devops26-dumbways-eko-edy-p/task/day-1/asset/profile-conf.png)
+![gambar](/task/day-1/asset/profile-conf.png)
   - skip upgrade ubuntu pro, lalu klik continue
   - skip install Open SSH Server, lalu klik done
   - skip feature server snap, lalu klik done
   - tunggu proses installing system sampai selesai 
-![gambar](/devops26-dumbways-eko-edy-p/task/day-1/asset/install-system.png)
+![gambar](/task/day-1/asset/install-system.png)
   - jika sudah selesai proses instalasi sistem nya, klik reboot now
-![gambar](/devops26-dumbways-eko-edy-p/task/day-1/asset/reboot.png)
+![gambar](/task/day-1/asset/reboot.png)
   - login dengan username dan password, maka hasilnya seperti ini.
-![gambar](/devops26-dumbways-eko-edy-p/task/day-1/asset/login.png)
+![gambar](/task/day-1/asset/login.png)
 
 
 ---
 3. test ping 
-![gambar](/devops26-dumbways-eko-edy-p/task/day-1/asset/test-ping.png)
+![gambar](/task/day-1/asset/test-ping.png)
 
 
 
