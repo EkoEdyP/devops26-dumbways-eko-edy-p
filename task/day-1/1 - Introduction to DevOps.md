@@ -213,7 +213,7 @@ brew install --cask virtualbox
 
 ### 4. Pastikan Ubuntu Server kalian ada jaringan dengan test menggunakan command `ping 8.8.8.8` / `ping google.com`
 
-![gambar](/asset/test-ping)
+![gambar](/asset/test-ping.png)
 
   
 
