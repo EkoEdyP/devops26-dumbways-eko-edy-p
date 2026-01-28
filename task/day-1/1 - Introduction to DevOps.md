@@ -208,7 +208,12 @@ brew install --cask virtualbox
 ![gambar](/asset/success-login.png)
 
 
+### 3. step by step menggunakan IP Address xxx.xxx.xxx.208 untuk server VM kita!
 
+
+### 4. Pastikan Ubuntu Server kalian ada jaringan dengan test menggunakan command `ping 8.8.8.8` / `ping google.com`
+
+![gambar](/asset/test-ping)
 
   
 
