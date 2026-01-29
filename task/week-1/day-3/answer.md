@@ -17,12 +17,12 @@ sudo systemctl status ssh
 ```bash
 ip a
 ```
-![gambar](/devops26-dumbways-eko-edy-p/task/week-1/day-3/asset/ip-a.png)
+![gambar](/task/week-1/day-3/asset/ip-a.png)
     5. buka kitty terminal
     6. akses VM dengan command di bawah (untuk ip nya menyesuaikan):
 ```bash
 ssh eep@192.168.1.208
 ```
     7. masukkan password VM kalian, jika berhasil tampilannya akan seperti gambar di bawah    
-![gambar](/devops26-dumbways-eko-edy-p/task/week-1/day-3/asset/akses-vm.png)
+![gambar](/task/week-1/day-3/asset/akses-vm.png)
 
