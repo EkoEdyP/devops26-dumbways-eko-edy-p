@@ -8,6 +8,13 @@
 
 ![gambar](/task/day-2/asset/eep.drawio.png)
 
+| Device   | IP Address   | IP Class | Subnet Mask     | CIDR | Gateway        | Network Address |
+|----------|--------------|----------|-----------------|------|----------------|-----------------|
+| Device 1 | 192.168.4.2  | Class C  | 255.255.255.0   | /24  | 192.168.11.1   | 192.168.11.0    |
+| Device 2 | 192.168.4.3  | Class C  | 255.255.255.0   | /24  | 192.168.11.1   | 192.168.11.0    |
+| Device 3 | 192.168.4.4  | Class C  | 255.255.255.0   | /24  | 192.168.11.1   | 192.168.11.0    |
+| Device 4 | 192.168.4.5  | Class C  | 255.255.255.0   | /24  | 192.168.11.1   | 192.168.11.0    |
+
 ---
 
 ### 2. perbedaan singkat antara SH (Shell) dan BASH (Bourne-Again Shell)
