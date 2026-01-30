@@ -179,3 +179,28 @@ Fungsi:
 ---
 
 ### 4. Nyalakan ufw dengan memberikan akses untuk port 22, 80, 443, 3000, 5000 dan 6969!
+
+    1. login VM
+    2. aktifkan ufw dengan command
+```bash
+sudo ufw enable
+```
+    3. izinkan OpenSSh
+```bash
+sudo ufw allow OpenSSH
+```
+    4. by default OpenSSH menggunakan port 22, check menggunakan command ini
+```bash
+sudo ufw app info OpenSSH
+```
+    5. beri ufw akses ke port 80, 443, 3000, 5000, 6969
+```bash
+sudo ufw allow 22
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw allow 3000
+sudo ufw allow 5000
+sudo ufw allow 6969
+```
+    6. pastikan port 22, 80, 443, 3000, 5000, 6969 bisa di akses.
+![gambar](/task/week-1/day-3/asset/port.png)
