@@ -37,10 +37,13 @@ ssh eep@192.168.1.208
 ```bash
 ssh-keygen
 ```
+
 ![gambar](/task/week-1/day-3/asset/ssh-keygen.png)
+
     2. masuk ke VM
     3. arahkan direktori ke `.ssh`
     4. masukkan ssh public key ke file `authorized_key`
+    
 ```bash
 echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBu72xeCy3y+Wd7ODQM6RK3jpRy5tp2WaPfmLZkIIZ7C eep@eep.local" >> ~/.ssh/authorized_keys
 ```
