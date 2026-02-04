@@ -28,6 +28,8 @@ npm -v # Should print "6.14.16".
 
 ```
 
+---
+
 2. clone code [wayshub-frontend](https://github.com/dumbwaysdev/wayshub-frontend)
 
 
@@ -37,17 +39,23 @@ git clone git@github.com:dumbwaysdev/wayshub-frontend.git
 
 ![gambar](/task/week-2/day-5/asset/clone.png)
 
+---
+
 3. izinkan port 3000 bisa di akses
 
 ```bash
 sudo ufw allow 3000
 ```
 
+---
+
 4. masuk ke folder `wayshub-frontend`
 
 ```bash
 cd wayshub-frontend
 ```
+
+---
 
 5. jalankan app wayshub-frontend nya
     1. install yarn `npm install -g yarn`
