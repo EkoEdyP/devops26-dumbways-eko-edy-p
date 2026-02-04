@@ -70,14 +70,14 @@ jika berhasil maka tampil seperti ini:
 
 - #### Python
 
-1. pastikan python3 sudah ter-install
+1. pastikan `python3` sudah ter-install
 
 ```bash
 python3 --version
 ```
 ---
 
-2. install pip
+2. install `pip`
 
 ```bash
 # install pip
@@ -98,7 +98,7 @@ cd python-app
 
 ```
 
-4. install flask
+4. install `flask`
 
 ```bash
 pip3 install flask
@@ -131,8 +131,6 @@ if __name__ == "__main__":
 ```
 
 ![gambar](/task/week-2/day-5/asset/simple-code-py.png)
-
---
     2. izinkan port `5000` bisa di akses, lalu jalankan `simple code` nya 
 
 ```bash
@@ -144,8 +142,6 @@ python3 app.py
 ```
 
 ![gambar](/task/week-2/day-5/asset/start-py.png)
-
---
     3. buka `browser` dan input `192.168.1.208:5000`
 
 jika berhasil maka tampilan nya seperti ini:
