@@ -155,3 +155,77 @@ jika berhasil maka tampilan nya seperti ini:
 
 - #### Golang
 
+1. install `GoLang`
+
+```bash
+# download 
+wget https://go.dev/dl/go1.25.6.linux-arm64.tar.gz
+
+
+# remove /usr/local/go dan ektrak file
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.25.6.linux-arm64.tar.gz
+
+# export ke env var
+echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+source ~/.bashrc
+
+# pastikan ter-install
+go version
+```
+
+---
+
+2. buat folder `go-app` dan masuk ke folder `go-app`
+
+```bash
+mkdir go-app
+
+cd go-app
+
+```
+
+---
+
+3. bikin simple code untuk menampilkan teks `Golang geming!`
+
+- **I**. buat file `main.go` dan input code nya
+
+```go
+# create file
+nano main.go
+
+# simple code
+package main
+
+import (
+	"fmt"
+	"net/http"
+)
+
+func handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, "Golang geming!")
+}
+
+func main() {
+	http.HandleFunc("/", handler)
+
+	fmt.Println("Server running on port 6969...")
+	http.ListenAndServe(":6969", nil)
+}
+
+```
+
+- **II**. izinkan port `6969`, dan jalankan `app` nya dengan 
+
+```bash
+# allow port 6969
+sudo allow ufw 6969
+
+# run app
+go run main.go
+```
+
+- **III**. buka `browser`, lalu input `192.168.1.208:6969` 
+
+jika berhasil, maka akan tampil seperti ini:
+![gambar](/task/week-2/day-5/asset/start-go.png)
