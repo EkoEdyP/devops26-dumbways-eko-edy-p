@@ -110,7 +110,7 @@ pip3 install flask
 
 5. bikin simple code untuk menampilkan `nama` dan berjalan di port `5000`
 
-    1. buat file `app.py` dan input code nya
+- **I**. buat file `app.py` dan input code nya
 
 ```python
 # create file
@@ -131,7 +131,8 @@ if __name__ == "__main__":
 ```
 
 ![gambar](/task/week-2/day-5/asset/simple-code-py.png)
-    2. izinkan port `5000` bisa di akses, lalu jalankan `simple code` nya 
+    
+- **II**. izinkan port `5000` bisa di akses, lalu jalankan `simple code` nya 
 
 ```bash
 # allow port 5000
@@ -142,7 +143,8 @@ python3 app.py
 ```
 
 ![gambar](/task/week-2/day-5/asset/start-py.png)
-    3. buka `browser` dan input `192.168.1.208:5000`
+    
+- **III**. buka `browser` dan input `192.168.1.208:5000`
 
 jika berhasil maka tampilan nya seperti ini:
 ![gambar](/task/week-2/day-5/asset/say-my-name.png)
