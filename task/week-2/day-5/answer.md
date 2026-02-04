@@ -41,7 +41,7 @@ git clone git@github.com:dumbwaysdev/wayshub-frontend.git
 
 ---
 
-3. izinkan port 3000 bisa di akses
+3. izinkan port `3000` bisa di akses
 
 ```bash
 sudo ufw allow 3000
