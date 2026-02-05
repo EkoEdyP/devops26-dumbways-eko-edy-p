@@ -4,8 +4,9 @@
 
 ---
 
-### 1.
+### 1. sturktur web server menggunakan reverse proxy
 
+![gambar](/task/week-2/day-6/asset/reverse-proxy.drawio.png)
 
 ---
 
