@@ -45,10 +45,19 @@ upstream ekoedyp {
 }
 
 server {
+    listen 80;
     server_name ekoedyp.xyz;
 
     location / {
         proxy_pass http://ekoedyp;
+
+        # DEBUG: tahu request ke backend mana
+        add_header X-Backend-Server $upstream_addr always;
+
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
     }
 }
 
@@ -63,6 +72,9 @@ sudo nginx -t
 # reload NGINX
 sudo systemctl reload nginx
 
-# Akses domain
-http://ekoedyp.xyz:3000
+# Akses domain menggunakan curl di terminal, test command di bawah beberapa kali supaya bisa melihat perbedaan nya
+curl -I http://ekoedyp.xyz
 ```
+
+lihat di bagian `X-Backend-Server`
+![gambar](/task/week-2/day-6/asset/test-vm.png)
