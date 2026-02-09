@@ -37,7 +37,8 @@ cd devops26-dumbways-ekoedyp
 contohnya:
 
 ```bash
-nano file-1.txt -> membuat file-1.txt dan menginput isi dari file-1.txt (buat file-1.txt, file-2.txt, file-3.txt)
+# membuat file-1.txt dan menginput isi dari file-1.txt (buat file-1.txt, file-2.txt, file-3.txt)
+nano file-1.txt
 ``` 
 
 ---
