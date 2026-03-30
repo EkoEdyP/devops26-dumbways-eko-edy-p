@@ -111,3 +111,14 @@ SELECT * FROM transaction;
 INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // must fail (permission denied)
 
 ```    
+
+6. Try to remote database from local computer with mysql-client
+    1. Make sure MySQL on the server is accessible from outside
+        1. edit `bind-address = 127.0.0.1` to `bind-address = 0.0.0.0` on `/etc/mysql/mysql.conf.d/mysqld.cnf`
+        2. restart mysql → `sudo systemctl restart mysql`
+    2. Create a MySQL user with remote access
+        1. login → `mysql -u root -p`
+        2. cretae user with remote access → `CREATE USER 'remote-db'@'%' IDENTIFIED BY 'the-password';`
+        3. grant specific access → `GRANT ALL PRIVILEGES ON SPESIFIC_DATABASE.* TO 'remote-db'@'%';` or grant all access `GRANT ALL PRIVILEGES ON *.* TO 'remote-db'@'%';`
+        4. reload → `FLUSH PRIVILEGES;`
+    3. Open the MySQL port on the server firewall → `sudo ufw allow 3306`    
