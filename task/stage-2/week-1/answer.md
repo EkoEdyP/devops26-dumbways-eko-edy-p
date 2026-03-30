@@ -7,7 +7,10 @@
 ### Penyelesaian Task
 
 ##### Prerequisite
+- cloud (Ubuntu Server 22.04.x LTS)
+- clone backend, frontend repository
 - nvm 
 - mysql-server
 - sequelize-cli
+- nginx
 - PM2
