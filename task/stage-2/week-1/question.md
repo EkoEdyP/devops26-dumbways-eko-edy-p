@@ -2,15 +2,15 @@
 
 ## STAGE 2
 
-Sebelum mengerjakan tugas, mohon persiapkan :
+#### Sebelum mengerjakan tugas, mohon persiapkan :
 
-- Akun Github dan buat repository dengan judul "devops21-dumbways-<nama kalian>"
+- Akun Github dan buat repository dengan judul `devops21-dumbways-<nama kalian>`
 
-- Gunakan file README.md untuk isi tugas kalian
+- Gunakan file `README.md` untuk isi tugas kalian
 
 - Buatlah langkah-langkah pengerjaan tugas beserta dokumentasinya
 
-Requirment:
+#### Requirment:
 
 - Appserver for deploying Database
 
