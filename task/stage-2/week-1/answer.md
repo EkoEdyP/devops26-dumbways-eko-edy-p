@@ -121,4 +121,7 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
         2. cretae user with remote access → `CREATE USER 'remote-db'@'%' IDENTIFIED BY 'the-password';`
         3. grant specific access → `GRANT ALL PRIVILEGES ON SPESIFIC_DATABASE.* TO 'remote-db'@'%';` or grant all access `GRANT ALL PRIVILEGES ON *.* TO 'remote-db'@'%';`
         4. reload → `FLUSH PRIVILEGES;`
-    3. Open the MySQL port on the server firewall → `sudo ufw allow 3306`    
+    3. Open the MySQL port on the server firewall → `sudo ufw allow 3306`
+    4. connect from local computer (mysql-client)
+        1. install → `brew install mysql-client`
+        2. connect to database server → `mysql -h IP_SERVER -u remote-db -p`    
