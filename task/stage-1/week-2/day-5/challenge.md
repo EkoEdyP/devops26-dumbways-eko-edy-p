@@ -120,7 +120,7 @@ nohup ./go-app > go-app.log 2>&1 & echo $! > go-app.pid
 5. buka browser dan input `192.168.1.208:6969`
 
 jika berhasil maka akan tampil seperti ini:
-![gambar](/task/week-2/day-5/asset/challenge-rawr.png)
+![gambar](/task/stage-1/week-2/day-5/asset/challenge-rawr.png)
 
 6. jika ingin mematikan ikuto commandi di bawah ini
 

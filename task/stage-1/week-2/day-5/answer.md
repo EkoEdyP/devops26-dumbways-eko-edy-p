@@ -37,7 +37,7 @@ npm -v # Should print "6.14.16".
 git clone git@github.com:dumbwaysdev/wayshub-frontend.git
 ```
 
-![gambar](/task/week-2/day-5/asset/clone.png)
+![gambar](/task/stage-1/week-2/day-5/asset/clone.png)
 
 ---
 
@@ -64,7 +64,7 @@ cd wayshub-frontend
     4. buka browser input `192.168.1.208:3000`
 
 jika berhasil maka tampil seperti ini:
-![gambar](/task/week-2/day-5/asset/start.png)
+![gambar](/task/stage-1/week-2/day-5/asset/start.png)
 
 ---
 
@@ -104,7 +104,7 @@ cd python-app
 pip3 install flask
 ```
 
-![gambar](/task/week-2/day-5/asset/flask.png)
+![gambar](/task/stage-1/week-2/day-5/asset/flask.png)
 
 ---
 
@@ -130,7 +130,7 @@ if __name__ == "__main__":
 
 ```
 
-![gambar](/task/week-2/day-5/asset/simple-code-py.png)
+![gambar](/task/stage-1/week-2/day-5/asset/simple-code-py.png)
     
 - **II**. izinkan port `5000` bisa di akses, lalu jalankan `simple code` nya 
 
@@ -142,12 +142,12 @@ sudo ufw allow 5000
 python3 app.py
 ```
 
-![gambar](/task/week-2/day-5/asset/start-py.png)
+![gambar](/task/stage-1/week-2/day-5/asset/start-py.png)
     
 - **III**. buka `browser` dan input `192.168.1.208:5000`
 
 jika berhasil maka tampilan nya seperti ini:
-![gambar](/task/week-2/day-5/asset/say-my-name.png)
+![gambar](/task/stage-1/week-2/day-5/asset/say-my-name.png)
 
 
 
@@ -228,4 +228,4 @@ go run main.go
 - **III**. buka `browser`, lalu input `192.168.1.208:6969` 
 
 jika berhasil, maka akan tampil seperti ini:
-![gambar](/task/week-2/day-5/asset/start-go.png)
+![gambar](/task/stage-1/week-2/day-5/asset/start-go.png)
