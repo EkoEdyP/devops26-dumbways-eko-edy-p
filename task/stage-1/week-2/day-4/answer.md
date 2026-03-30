@@ -118,11 +118,11 @@ cd devops26-dumbways-eko-edy-p
 cd dumbways/devops26-dumbways-eko-edy-p/
 ```
 
-![gambar](/task/week-2/day-4/asset/cd.png)
+![gambar](/task/stage-1/week-2/day-4/asset/cd.png)
 
 ---
 
 2. disini saya mencoba untuk membuat file example.txt untuk mendemokan cara untuk mencari perubahan pada text
 
-![gambar](/task/week-2/day-4/asset/example.png)
+![gambar](/task/stage-1/week-2/day-4/asset/example.png)
 
