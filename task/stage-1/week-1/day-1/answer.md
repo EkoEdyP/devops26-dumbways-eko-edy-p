@@ -60,7 +60,7 @@ Hasilnya:
   3. Membuat dan mengkonfigurasi Virtual Machine Baru
   - Buka **Parrarels Desktop**
   - di bagian pilih install windows, linux, or macos from an image file, lalu klik continue
-![gambar](/task/week-1/day-1/asset/create-new-pd.png)
+![gambar](/task/stage-1/week-1/day-1/asset/create-new-pd.png)
   - tentukan iso nya, lalu klik continue
 ![gambar](/task/week-1/day-1/asset/set-iso.png)
   - isi nama dan pilih lokasi penyimpanan vm, lalu klik create
