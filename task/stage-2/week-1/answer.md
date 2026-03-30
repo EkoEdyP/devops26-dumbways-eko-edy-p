@@ -108,6 +108,6 @@ USE demo;
 
 SELECT * FROM transaction;
 
-INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // Harus gagal (permission denied)
+INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // must fail (permission denied)
 
 ```    
