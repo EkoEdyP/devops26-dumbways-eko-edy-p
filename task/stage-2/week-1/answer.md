@@ -21,8 +21,8 @@
 
 1. login cloud computing
     1. open terminal
-    2. `chmod 600 /LOKASI/NAMA_PRIVATEKEY.pem`
-    3. `ssh -i /path_directory/nama_private_key.pem ubuntu@ip_public_server`
+    2. `chmod 600 /path_directory/private_key_name.pem`
+    3. `ssh -i /path_directory/private_key_name.pem hostname@ip_public_server`
 2. clone [backend](https://github.com/dumbwaysdev/wayshub-backend), [frontend](https://github.com/dumbwaysdev/wayshub-frontend) repository
 3. install NVM dan pastikan pakai [NodeJS 12](https://nodejs.org/en/download)
 
