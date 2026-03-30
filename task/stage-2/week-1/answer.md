@@ -6,7 +6,7 @@
 
 ### Task Completion
 
-##### Prerequisite
+##### **Prerequisite**
 - cloud (Ubuntu Server 22.04.x LTS)
 - clone backend, frontend repository
 - nvm 
@@ -17,7 +17,7 @@
 - certbot
 - PM2
 
-##### Steps to Complete the Task
+##### **Steps to Complete the Task**
 
 1. login cloud computing
     1. open terminal
