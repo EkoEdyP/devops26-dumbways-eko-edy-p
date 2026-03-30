@@ -43,6 +43,7 @@ node -v # Should print "v12.22.12".
 npm -v # Should print "6.14.16".
 
 ```
+
 4. manage mysql
     1. install mysql-server → `sudo apt install mysql-server`
     2. setup secure installation → `sudo mysql_secure_installation`
