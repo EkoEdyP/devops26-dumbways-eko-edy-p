@@ -11,9 +11,10 @@
 - clone backend, frontend repository
 - nvm 
 - mysql-server
+- mysql-client
+- UFW
 - sequelize-cli
 - nginx
-- UFW
 - certbot
 - PM2
 
