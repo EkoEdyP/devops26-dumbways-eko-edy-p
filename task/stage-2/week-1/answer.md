@@ -14,3 +14,8 @@
 - sequelize-cli
 - nginx
 - PM2
+
+##### Step Penyelesaian Task
+
+1. 
+  
