@@ -18,7 +18,7 @@ sudo systemctl status ssh
 ip a
 ```
 
-![gambar](/task/week-1/day-3/asset/ip-a.png)
+![gambar](/task/stage-1/week-1/day-3/asset/ip-a.png)
 
     5. buka kitty terminal
     6. akses VM dengan command di bawah (untuk ip nya menyesuaikan):
@@ -27,7 +27,7 @@ ip a
 ssh eep@192.168.1.208
 ```
     7. masukkan password VM kalian, jika berhasil tampilannya akan seperti gambar di bawah    
-![gambar](/task/week-1/day-3/asset/akses-vm.png)
+![gambar](/task/stage-1/week-1/day-3/asset/akses-vm.png)
 
 ---
 
@@ -38,7 +38,7 @@ ssh eep@192.168.1.208
 ssh-keygen
 ```
 
-![gambar](/task/week-1/day-3/asset/ssh-keygen.png)
+![gambar](/task/stage-1/week-1/day-3/asset/ssh-keygen.png)
 
     2. masuk ke VM
     3. arahkan direktori ke `.ssh`
@@ -47,13 +47,13 @@ ssh-keygen
 ```bash
 echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBu72xeCy3y+Wd7ODQM6RK3jpRy5tp2WaPfmLZkIIZ7C eep@eep.local" >> ~/.ssh/authorized_keys
 ```
-![gambar](/task/week-1/day-3/asset/authorized_keys.png)
+![gambar](/task/stage-1/week-1/day-3/asset/authorized_keys.png)
     5. test masuk VM menggunakan ssh public key dengan command di bawah (sesuaikan tempat penyimpanan ssh key nya)
 ```bash
 ssh -i /Users/eep/Developments/playground/vm-ubuntu eep@192.168.1.208
 ```
 
-![gambar](/task/week-1/day-3/asset/login-pubkey.png)
+![gambar](/task/stage-1/week-1/day-3/asset/login-pubkey.png)
 
     6. sekarang atur config ssh agar bisa di akses hanya menggunakan publickey (password bisa dimatikan)
     7. masuk ke folder `/etc/ssh` edit file sshd_config seperti di bawah ini:
@@ -63,12 +63,12 @@ PubkeyAuthentication yes
 PasswordAuthentication no
 ```
 
-![gambar](/task/week-1/day-3/asset/edit-sshd-conf.png)
+![gambar](/task/stage-1/week-1/day-3/asset/edit-sshd-conf.png)
 
     8. restart SSH dengan command `sudo systemctl restart ssh`
     9. test login tanpa ssh public key, jika berhasil maka tampil seperti di bawah ini:
 
-![gambar](/task/week-1/day-3/asset/login-without-pubkey.png)
+![gambar](/task/stage-1/week-1/day-3/asset/login-without-pubkey.png)
 
     10. done, sekarang kita hanya bisa login ke VM menggunakan SSH Public Key
 
@@ -216,4 +216,4 @@ sudo ufw allow 5000
 sudo ufw allow 6969
 ```
     6. pastikan port 22, 80, 443, 3000, 5000, 6969 bisa di akses.
-![gambar](/task/week-1/day-3/asset/port.png)
+![gambar](/task/stage-1/week-1/day-3/asset/port.png)
