@@ -77,4 +77,4 @@ curl -I http://ekoedyp.xyz
 ```
 
 lihat di bagian `X-Backend-Server`
-![gambar](/task/week-2/day-6/asset/test-vm.png)
+![gambar](/task/stage-1/week-2/day-6/asset/test-vm.png)

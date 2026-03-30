@@ -6,7 +6,7 @@
 
 ### 1. sturktur web server menggunakan reverse proxy
 
-![gambar](/task/week-2/day-6/asset/reverse-proxy.drawio.png)
+![gambar](/task/stage-1/week-2/day-6/asset/reverse-proxy.drawio.png)
 
 cara kerjanya:
 
@@ -23,7 +23,7 @@ cara kerjanya:
 **1**. set domain di `MacOS`
 
 hasilnya:
-![gambar](/task/week-2/day-6/asset/host.png)
+![gambar](/task/stage-1/week-2/day-6/asset/host.png)
 
 
 **2**. install `nginx`
@@ -61,10 +61,10 @@ sudo nginx -t
 sudo systemctl restart nginx
 ```
 
-![gambar](/task/week-2/day-6/asset/set-conf.png)
+![gambar](/task/stage-1/week-2/day-6/asset/set-conf.png)
 
 *4*. buka browser lalu input `ekoedyp.xyz:3000`
 
 jika berhasil maka akan tampil seperti ini:
-![gambar](/task/week-2/day-6/asset/ekoedyp.xyz.png)
+![gambar](/task/stage-1/week-2/day-6/asset/ekoedyp.xyz.png)
 
