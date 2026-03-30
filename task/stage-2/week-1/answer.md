@@ -4,7 +4,7 @@
 
 ---
 
-### Penyelesaian Task
+### Task Completion
 
 ##### Prerequisite
 - cloud (Ubuntu Server 22.04.x LTS)
@@ -17,7 +17,7 @@
 - certbot
 - PM2
 
-##### Step Penyelesaian Task
+##### Steps to Complete the Task
 
 1. login cloud computing
     1. open terminal
