@@ -44,8 +44,13 @@ npm -v # Should print "6.14.16".
 
 ```
 
-4. manage mysql
+4. manage and secure mysql
     1. install mysql-server → `sudo apt install mysql-server`
     2. setup secure installation → `sudo mysql_secure_installation`
-    3. add password for root user → `ALTER USER 'root'@'localhost' IDENTIFIED BY 'the-new-password';`
+    3. login mysql → `sudo mysql`
+    4. add password for root user → `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'the-new-password';`
+    5. create new user → `CREATE USER 'eep'@'localhost' IDENTIFIED BY 'the-password';`
+    6. create new database → `CREATE DATABASE wayshub;`
+    7. Create privileges for your new user so they can access the database you created → `GRANT ALL PRIVILEGES ON wayshub.* TO 'eep'@'localhost';`
+    8. reload → `FLUSH PRIVILEGES;`
 5. 
