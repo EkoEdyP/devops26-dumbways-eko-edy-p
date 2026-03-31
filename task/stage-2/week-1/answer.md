@@ -139,7 +139,7 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
     5. Running migration → `sequelize db:migrate`
 
     *make sure migrate successfully*    
-    ![gambar](/task/stage-2/week-1/asset/db-conf.png)
+    ![gambar](/task/stage-2/week-1/asset/db-schema.png)
 
     6. Deploy apllication on Top PM2
         1. install PM2 → `npm install pm2@latest -g`
