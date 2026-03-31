@@ -14,9 +14,9 @@
 - mysql-client
 - UFW
 - sequelize-cli
+- PM2
 - nginx
 - certbot
-- PM2
 
 ##### **Steps to Complete the Task**
 
