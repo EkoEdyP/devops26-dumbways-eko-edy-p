@@ -141,4 +141,20 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
     *make sure migrate successfully*    
     ![gambar](/task/stage-2/week-1/asset/db-conf.png)
 
-    6. 
+    6. Deploy apllication on Top PM2
+        1. install PM2 → `npm install pm2@latest -g`
+        2. Create a file named `ecosystem.config.js` and fill it with the code below
+        
+        ![gambar](/task/stage-2/week-1/asset/ecosystem-conf.png)
+
+        3. deploy → `pm2 start`
+        4. make sure with `pm2 list` and `pm2 logs`
+
+        ![gambar](/task/stage-2/week-1/asset/ways-back.png)
+
+8. Clone Wayshub-Frontend application
+    1. clone wayshub frontend application → `git clone https://github.com/dumbwaysdev/wayshub-frontend`
+    2. use node version 14 → `nvm install 14`
+    3. set configuration on src/config/api.js and then adjust it to backend url.
+    4. Deploy frontend apllication on Top PM2
+
