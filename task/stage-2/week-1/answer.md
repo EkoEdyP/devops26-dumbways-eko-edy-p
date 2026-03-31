@@ -136,4 +136,9 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
     ![gambar](/task/stage-2/week-1/asset/db-conf.png)
 
     4. Install sequelize-cli → `npm i -g sequelize-cli`
-    5. 
+    5. Running migration → `sequelize db:migrate`
+
+    *make sure migrate successfully*    
+    ![gambar](/task/stage-2/week-1/asset/db-conf.png)
+
+    6. 
