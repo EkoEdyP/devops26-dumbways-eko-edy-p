@@ -155,7 +155,7 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
 8. Clone Wayshub-Frontend application
     1. clone wayshub frontend application → `git clone https://github.com/dumbwaysdev/wayshub-frontend` and dont forget to install dependencies → `npm install`
     2. use node version 14 → `nvm install 14`
-    3. set configuration on src/config/api.js and then adjust it to backend url.
+    3. set configuration on `src/config/api.js` and then adjust it to backend url.
 
     *Make sure the value of the baseURL matches the gateway or domain*
     ![gambar](/task/stage-2/week-1/asset/ways-back.png)
