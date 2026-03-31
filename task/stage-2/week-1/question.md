@@ -58,7 +58,7 @@
 
   - Use Node Version 14
 
-  - Dont forget to change configuration on dumbflix-backend/config/config.json and then adjust it to your database.
+  - Dont forget to change configuration on wayshub-backend/config/config.json and then adjust it to your database.
 
   - Install sequelize-cli
 

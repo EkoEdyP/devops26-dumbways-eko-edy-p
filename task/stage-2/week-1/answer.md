@@ -126,3 +126,11 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
     4. connect from local computer (mysql-client)
         1. install → `brew install mysql-client`
         2. connect to database server → `mysql -h IP_SERVER -u remote-db -p`    
+
+7. Deploy Wayshub-Backend
+    1. clone wayshub backend application → `git clone https://github.com/dumbwaysdev/wayshub-backend.git`
+    2. use node version 14 → `nvm install 14`
+    3. set configuration on `wayshub-backend/config/config.json` and then adjust it to your database.
+
+make sure username value, password value, database value, and dialect value.    
+![gambar](/devops26-dumbways-eko-edy-p/task/stage-2/week-1/asset/db-conf.png)
