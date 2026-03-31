@@ -132,5 +132,5 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
     2. use node version 14 → `nvm install 14`
     3. set configuration on `wayshub-backend/config/config.json` and then adjust it to your database.
 
-make sure username value, password value, database value, and dialect value.    
+*make sure username value, password value, database value, and dialect value.*    
 ![gambar](/task/stage-2/week-1/asset/db-conf.png)
