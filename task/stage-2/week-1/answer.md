@@ -133,4 +133,4 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
     3. set configuration on `wayshub-backend/config/config.json` and then adjust it to your database.
 
 make sure username value, password value, database value, and dialect value.    
-![gambar](/devops26-dumbways-eko-edy-p/task/stage-2/week-1/asset/db-conf.png)
+![gambar](/task/stage-2/week-1/asset/db-conf.png)
