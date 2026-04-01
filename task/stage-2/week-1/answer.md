@@ -50,9 +50,9 @@ npm -v # Should print "6.14.16".
     2. setup secure installation → `sudo mysql_secure_installation`
     3. login mysql → `sudo mysql`
     4. add password for root user → `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'the-new-password';`
-    5. create new user → `CREATE USER 'eep'@'localhost' IDENTIFIED BY 'the-password';`
+    5. create new user → `CREATE USER 'eep'@'%' IDENTIFIED BY 'the-password';`
     6. create new database → `CREATE DATABASE wayshub;`
-    7. Create privileges for your new user so they can access the database you created → `GRANT ALL PRIVILEGES ON wayshub.* TO 'eep'@'localhost';`
+    7. Create privileges for your new user so they can access the database you created → `GRANT ALL PRIVILEGES ON *.* TO 'eep'@'%';`
     8. reload → `FLUSH PRIVILEGES;`
 
 5. try role based
@@ -170,3 +170,7 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
 
         ![gambar](/task/stage-2/week-1/asset/ways-front.png)
 
+9. setup gateway
+    1. install nginx → `sudo apt install nginx`
+    2. [contoh](https://github.com/EkoEdyP/devops26-dumbways-eko-edy-p/blob/main/task/stage-1/week-2/day-6/answer.md#2-step-by-step-membuat-reverse-proxy-pada-wayshub-frontenddan-set-domain-menjadi-ekoedypxyz)
+10. setup certbot
