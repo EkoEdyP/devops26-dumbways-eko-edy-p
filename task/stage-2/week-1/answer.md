@@ -223,8 +223,7 @@ DOMAINS=(
 "api.eep.wayshub-backend.studentdumbways.my.id"
 )
 
-echo "=== SSL Check Multi Domain ==="
-date
+echo "=== SSL Certbot Checker ==="
 
 for DOMAIN in "${DOMAINS[@]}"
 do

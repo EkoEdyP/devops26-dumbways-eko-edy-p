@@ -5,8 +5,7 @@ DOMAINS=(
 "api.eep.wayshub-backend.studentdumbways.my.id"
 )
 
-echo "=== SSL Check Multi Domain ==="
-date
+echo "=== SSL Cerbot Checker ==="
 
 for DOMAIN in "${DOMAINS[@]}"
 do
