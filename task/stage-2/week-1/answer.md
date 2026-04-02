@@ -212,3 +212,4 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
 
     ![gambar](/task/stage-2/week-1/asset/output.png)
 
+---
