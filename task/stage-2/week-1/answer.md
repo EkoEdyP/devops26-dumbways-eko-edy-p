@@ -191,4 +191,7 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
         *backend and frontend nginx configuration*    
         ![gambar](/task/stage-2/week-1/asset/nginx.conf.png)
 
+        3. Check if the configuration is OK or NOT → `sudo nginx -t`
+        4. restart nginx → `sudo systemctl restart nginx`
+
 10. setup certbot
