@@ -15,6 +15,7 @@
 - UFW
 - sequelize-cli
 - PM2
+- register dash.cloudflare account
 - nginx
 - certbot
 
