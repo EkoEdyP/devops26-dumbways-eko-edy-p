@@ -214,7 +214,7 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
     ![gambar](/task/stage-2/week-1/asset/output.png)
 
 11. auto renew SSL certbot
-    1. buat bashscript
+    1. buat bashscript `sudo nano /usr/local/bin/ssl-renew.sh`
 ```bash
 #!/bin/bash
 
@@ -260,5 +260,5 @@ done
 echo "=== Done ==="
 ```
 
--
-    2. 
+    2. apply permission `sudo chmod +x /usr/local/bin/ssl-renew.sh`
+    3. test `sudo /usr/local/bin/ssl-renew.sh`
