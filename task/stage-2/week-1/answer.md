@@ -223,11 +223,14 @@ DOMAINS=(
 "api.eep.wayshub-backend.studentdumbways.my.id"
 )
 
-echo "=== SSL Certbot Checker ==="
+echo ""
+echo "-----------------------------"
+echo "=== SSL Cerbot Checker ==="
 
 for DOMAIN in "${DOMAINS[@]}"
 do
     echo "-----------------------------"
+    echo ""
     echo "Checking: $DOMAIN"
 
     EXPIRY_DATE=$(echo | openssl s_client -servername $DOMAIN -connect $DOMAIN:443 2>/dev/null \
@@ -253,9 +256,11 @@ do
         systemctl reload nginx
     else
         echo "Belum perlu renew"
+        echo ""
     fi
 done
 
+echo ""
 echo "=== Done ==="
 
 ```
