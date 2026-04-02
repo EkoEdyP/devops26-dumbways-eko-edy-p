@@ -204,7 +204,7 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
     ![gambar](/task/stage-2/week-1/asset/certbot.backend.result.png)
 
     *Certbot output (frontend)*
-    ![gambar](/task/stage-2/week-1/asset/certbot.backend.frontend.png)
+    ![gambar](/task/stage-2/week-1/asset/certbot.frontend.result.png)
 
     6. Check if the configuration is OK or NOT → sudo nginx -t
     7. restart nginx → sudo systemctl restart nginx
