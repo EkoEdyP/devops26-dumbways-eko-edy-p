@@ -172,5 +172,23 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
 
 9. setup gateway
     1. install nginx → `sudo apt install nginx`
-    2. [contoh](https://github.com/EkoEdyP/devops26-dumbways-eko-edy-p/blob/main/task/stage-1/week-2/day-6/answer.md#2-step-by-step-membuat-reverse-proxy-pada-wayshub-frontenddan-set-domain-menjadi-ekoedypxyz)
+    2. configure cloudflare DNS
+        1. Log in to Cloudflare and select your domain.
+        2. go to `DNS` > `Records`
+        3. add record → Select the `type, name, and IPv4 address`
+
+        *backend*    
+        ![gambar](/task/stage-2/week-1/asset/dns.backend.png)
+
+        *frontend*    
+        ![gambar](/task/stage-2/week-1/asset/dns.frontend.png)
+
+    
+    3. configure nginx reverse proxy
+        1. Go to the folder to create the configuration → `cd /etc/nginx/sites-available`
+        2. Create a file for `wayshub-backend and wayshub-frontend` the configuration settings → `sudo nano wayshub-frontend.conf`
+
+        *backend and frontend nginx configuration*    
+        ![gambar](/task/stage-2/week-1/asset/nginx.conf.png)
+
 10. setup certbot
