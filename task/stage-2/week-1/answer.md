@@ -214,7 +214,7 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
     ![gambar](/task/stage-2/week-1/asset/output.png)
 
 11. auto renew SSL certbot
-    1. buat bashscript `sudo nano /usr/local/bin/ssl-renew.sh`
+    1. buat bashscript → `sudo nano /usr/local/bin/ssl-renew.sh`
 ```bash
 #!/bin/bash
 
@@ -265,5 +265,9 @@ echo "=== Done ==="
 
 ```
 -
-    2. apply permission `sudo chmod +x /usr/local/bin/ssl-renew.sh`
-    3. test `sudo /usr/local/bin/ssl-renew.sh`
+    2. apply permission → `sudo chmod +x /usr/local/bin/ssl-renew.sh`
+    3. test → `sudo /usr/local/bin/ssl-renew.sh`
+    4. input to cron → `sudo crontab -e`
+    5. add code to cron → `59 23 * * * /usr/local/bin/ssl-renew.sh >> /var/log/ssl-renew.log 2>&1`
+    6. validate → `sudo crontab -l`
+    7. for checking log → `cat /var/log/ssl-renew.log`
