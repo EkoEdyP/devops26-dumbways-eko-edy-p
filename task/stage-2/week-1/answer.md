@@ -187,7 +187,7 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
     
     3. configure nginx reverse proxy
         1. Go to the folder to create the configuration → `cd /etc/nginx/sites-available`
-        2. Create a file for `wayshub-backend and wayshub-frontend` the configuration settings → `sudo nano wayshub-frontend.conf`
+        2. Create a file for `wayshub-backend and wayshub-frontend` the configuration settings
 
         *backend and frontend nginx configuration*    
         ![gambar](/task/stage-2/week-1/asset/nginx.conf.png)
