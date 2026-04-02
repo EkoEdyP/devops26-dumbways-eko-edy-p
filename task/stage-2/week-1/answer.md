@@ -194,5 +194,6 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
 
         3. Check if the configuration is OK or NOT → `sudo nginx -t`
         4. restart nginx → `sudo systemctl restart nginx`
+        5. Make sure the website is accessible and there are no issues
 
 10. setup certbot
