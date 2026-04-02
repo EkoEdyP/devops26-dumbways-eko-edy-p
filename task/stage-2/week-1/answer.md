@@ -192,7 +192,6 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
         4. apply nginx new conf `sudo ln -s /etc/nginx/sites-available/wayshub-frontend.conf /etc/nginx/sites-enabled/` and `sudo ln -s /etc/nginx/sites-available/wayshub-backend.conf /etc/nginx/sites-enabled/`
         4. Check if the configuration is OK or NOT → `sudo nginx -t`
         5. restart nginx → `sudo systemctl restart nginx`
-        6. Make sure the website is accessible and there are no issues
 
 10. setup certbot
     1. install snapd → `sudo apt install snapd`
@@ -200,5 +199,12 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
     3. install certbot → `sudo snap install --classic certbot`
     4. Prepare the Certbot command → `sudo ln -s /snap/bin/certbot /usr/local/bin/certbot`
     5. run certbot `sudo certbot --nginx -d api.eep.wayshub-backend.studentdumbways.my.id` and `sudo certbot --nginx -d eep.wayshub-frontend.studentdumbways.my.id`
+
+    *Certbot output (backend)*
+    ![gambar](/task/stage-2/week-1/asset/certbot.backend.result.png)
+
+    *Certbot output (frontend)*
+    ![gambar](/task/stage-2/week-1/asset/certbot.backend.frontend.png)
+
     6. Check if the configuration is OK or NOT → sudo nginx -t
     7. restart nginx → sudo systemctl restart nginx
