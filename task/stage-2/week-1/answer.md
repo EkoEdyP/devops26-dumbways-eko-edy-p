@@ -187,14 +187,9 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
     
     3. configure nginx reverse proxy
         1. Go to the folder to create the configuration → `cd /etc/nginx/sites-available`
-        2. Create a file for `wayshub-backend and wayshub-frontend` the configuration settings
-
-        *backend and frontend nginx configuration*    
-        ![gambar](/task/stage-2/week-1/asset/nginx.conf.png)
-
+        2. Create a file for `wayshub-backend and wayshub-frontend` the nginx configuration
         3. remove nginx default conf `sudo rm /etc/nginx/sites-enabled/default`
-        4. apply nginx new conf `sudo ln -s /etc/nginx/sites-available/wayshub-frontend.conf /etc/nginx/sites-enabled/
-sudo ln -s /etc/nginx/sites-available/wayshub-backend.conf /etc/nginx/sites-enabled/`
+        4. apply nginx new conf `sudo ln -s /etc/nginx/sites-available/wayshub-frontend.conf /etc/nginx/sites-enabled/` and `sudo ln -s /etc/nginx/sites-available/wayshub-backend.conf /etc/nginx/sites-enabled/`
         4. Check if the configuration is OK or NOT → `sudo nginx -t`
         5. restart nginx → `sudo systemctl restart nginx`
         6. Make sure the website is accessible and there are no issues
@@ -204,7 +199,6 @@ sudo ln -s /etc/nginx/sites-available/wayshub-backend.conf /etc/nginx/sites-enab
     2. Remove certbot-auto and any Certbot OS packages → `sudo apt-get remove certbot`
     3. install certbot → `sudo snap install --classic certbot`
     4. Prepare the Certbot command → `sudo ln -s /snap/bin/certbot /usr/local/bin/certbot`
-    5. run certbot `sudo certbot --nginx -d api.eep.wayshub-backend.studentdumbways.my.id
-sudo certbot --nginx -d eep.wayshub-frontend.studentdumbways.my.id`
+    5. run certbot `sudo certbot --nginx -d api.eep.wayshub-backend.studentdumbways.my.id` and `sudo certbot --nginx -d eep.wayshub-frontend.studentdumbways.my.id`
     6. Check if the configuration is OK or NOT → sudo nginx -t
     7. restart nginx → sudo systemctl restart nginx
