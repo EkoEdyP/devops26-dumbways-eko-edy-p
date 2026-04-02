@@ -258,7 +258,8 @@ do
 done
 
 echo "=== Done ==="
-```
 
+```
+-
     2. apply permission `sudo chmod +x /usr/local/bin/ssl-renew.sh`
     3. test `sudo /usr/local/bin/ssl-renew.sh`
