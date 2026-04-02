@@ -208,7 +208,7 @@ INSERT INTO transaction (amount, description) VALUES (5000, 'Test guest'); // mu
 
     6. Check if the configuration is OK or NOT → sudo nginx -t
     7. restart nginx → sudo systemctl restart nginx
-    8. check on web [eep.wayshub-frontend.studentdumbways.my.id](eep.wayshub-frontend.studentdumbways.my.id)
+    8. check on web [click here](https://eep.wayshub-frontend.studentdumbways.my.id)
 
     *output*
     ![gambar](/task/stage-2/week-1/asset/output.png)
