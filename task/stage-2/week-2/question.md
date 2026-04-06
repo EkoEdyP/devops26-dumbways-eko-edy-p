@@ -76,7 +76,7 @@
 
 ---
 
-[ Jenkins ]
+### *[ Jenkins ]*
 
 Installasi Jenkins on top Docker or native
 
@@ -106,7 +106,9 @@ Auto trigger setiap ada perubahan di SCM
 
 Buat job notification ke discord
 
-[ Gitlab ]
+---
+
+### *[ Gitlab ]*
 
 Implementasikan penggunaan Gitlab Runner pada aplikasi Frontend Kalian
 
