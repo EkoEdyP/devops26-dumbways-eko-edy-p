@@ -63,11 +63,11 @@
         - SSL gunakan wildcard
 
 - Untuk DNS bisa sesuaikan seperti contoh di bawah ini
-    *Staging*
+    - *Staging*
         - Frontend: team1.staging.studentdumbways.my.id
         - Backend: api.team1.staging.studentdumbways.my.id
 
-    *Production*
+    - *Production*
         - Frontend: team1.studentdumbways.my.id
         - Backend: api.team1.studentdumbways.my.id
 
