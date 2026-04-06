@@ -37,7 +37,7 @@
 
 - Ketentuan buatlah 2 environment yaitu (staging dan production)
 
-    - Ketentuan di Staging
+    - *Ketentuan di Staging*
         - Buat suatu docker compose yang berisi beberapa service kalian
             - Web Server
             - Frontend
@@ -50,7 +50,7 @@
 
         - Deploy database terlebih dahulu menggunakan mysql dan jangan lupa untuk pasang volume di bagian database.
 
-    - Ketentuan di Production
+    - *Ketentuan di Production*
         - Deploy database di server terpisah
         - Server Backend terpisah dengan 2 container di dalamnya
         - Server Frontend terpisah dengan 2 container di dalamnya
@@ -58,30 +58,21 @@
         - Untuk penamaan image, sesuaikan dengan environment masing masing, ex: team1/dumbflx/frontend:production
         - Untuk building image frontend dan backend sebisa mungkin buat dockerized dengan image sekecil mungkin(gunakan multistage build). dan jangan lupa untuk sesuaikan configuration dari backend ke database maupun frontend ke backend sebelum di build menjadi docker images.
         - Untuk Web Server buatlah configurasi reverse-proxy menggunakan nginx on top docker.
+        - SSL CLOUDFLARE OFF!!!
+        - Gunakan docker volume untuk membuat reverse proxy
+        - SSL gunakan wildcard
 
-SSL CLOUDFLARE OFF!!!
+- Untuk DNS bisa sesuaikan seperti contoh di bawah ini
+    *Staging*
+        - Frontend: team1.staging.studentdumbways.my.id
+        - Backend: api.team1.staging.studentdumbways.my.id
 
-Gunakan docker volume untuk membuat reverse proxy
+    *Production*
+        - Frontend: team1.studentdumbways.my.id
+        - Backend: api.team1.studentdumbways.my.id
 
-SSL gunakan wildcard
-
-Untuk DNS bisa sesuaikan seperti contoh di bawah ini
-
-Staging
-
-Frontend: team1.staging.studentdumbways.my.id
-
-Backend: api.team1.staging.studentdumbways.my.id
-
-Production
-
-Frontend: team1.studentdumbways.my.id
-
-Backend: api.team1.studentdumbways.my.id
-
-Push image ke docker registry kalian masing".
-
-Aplikasi dapat berjalan dengan sesuai seperti melakukan login/register.
+- Push image ke docker registry kalian masing".
+- Aplikasi dapat berjalan dengan sesuai seperti melakukan login/register.
 
 [ Jenkins ]
 
