@@ -15,13 +15,13 @@
 
 #### Repository && Reference:
 
-[Wayshub Backend](https://github.com/dumbwaysdev/wayshub-backend.git)
+- [Wayshub Backend](https://github.com/dumbwaysdev/wayshub-backend.git)
 
-[Wayshub Frontend](https://github.com/dumbwaysdev/wayshub-frontend.git)
+- [Wayshub Frontend](https://github.com/dumbwaysdev/wayshub-frontend.git)
 
-[Certbot](https://certbot.eff.org/instructions?ws=nginx&os=ubuntufocal)
+- [Certbot](https://certbot.eff.org/instructions?ws=nginx&os=ubuntufocal)
 
-[PM2 Runtime With Docker](https://pm2.keymetrics.io/docs/usage/docker-pm2-nodejs)
+- [PM2 Runtime With Docker](https://pm2.keymetrics.io/docs/usage/docker-pm2-nodejs)
 
 ---
 
