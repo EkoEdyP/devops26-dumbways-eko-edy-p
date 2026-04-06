@@ -74,6 +74,8 @@
 - Push image ke docker registry kalian masing".
 - Aplikasi dapat berjalan dengan sesuai seperti melakukan login/register.
 
+---
+
 [ Jenkins ]
 
 Installasi Jenkins on top Docker or native
