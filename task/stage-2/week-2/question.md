@@ -71,7 +71,7 @@
         - Frontend: team1.studentdumbways.my.id
         - Backend: api.team1.studentdumbways.my.id
 
-- Push image ke docker registry kalian masing".
+- Push image ke docker registry kalian masing-masing.
 - Aplikasi dapat berjalan dengan sesuai seperti melakukan login/register.
 
 ---
