@@ -36,7 +36,7 @@
 - Deploy aplikasi Web Server, Frontend, Backend, serta Database on top docker compose
     1. buat Dockerfile di backend
     ```bash
-    FROM node:18
+    FROM node:14
 
     WORKDIR /app
 
@@ -45,7 +45,7 @@
 
     COPY . .
 
-    RUN npm install -g pm2
+    RUN npm i -g sequelize-cli pm2@latest -g
 
     EXPOSE 5000
 
