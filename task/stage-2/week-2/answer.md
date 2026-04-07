@@ -40,8 +40,11 @@
     dumbways-app/
     ├── docker-compose.yaml
     │
-    ├── nginx/
+    ├── nginx(docker volume)/
     │   └── (nginx configuration)
+    │
+    ├── certbot(docker volume)/
+    │   └── (cerbot configuration)
     │
     ├── wayshub-backend/
     │   ├── Dockerfile
