@@ -46,6 +46,9 @@
     ├── certbot(docker volume)/
     │   └── (cerbot configuration)
     │
+    ├── mysql(mysql volume)/
+    │   └── (mysql configuration)
+    │
     ├── wayshub-backend/
     │   ├── Dockerfile
     │   └── (source code backend)

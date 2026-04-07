@@ -1,9 +1,41 @@
 services:
+  database:
+    image: mysql
+    container_name: db_staging
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: eep-db-staging
+      MYSQL_PASSWORD: MySql@123
+      MYSQL_DATABASE: wayshub
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      - eep_network
+
+  migration:
+    build:
+      context: ./wayshub-backend
+      dockerfile: Dockerfile
+    container_name: migration_staging
+    command: >
+      sh -c "sequelize db:migrate"
+    environment:
+      NODE_ENV: staging
+      DB_HOST: database
+      DB_USER: eep-db-staging
+      DB_PASSWORD: MySql@123
+      DB_NAME: wayshub
+    depends_on:
+      - database
+    networks:
+      - eep_network
+
   webserver:
     image: nginx:alpine
     container_name: webserver_staging
     ports:
-      - "81:80"
+      - "80:80"
       - "443:443"
     volumes:
       - ./nginx:/etc/nginx/conf.d
@@ -12,6 +44,28 @@ services:
     depends_on:
       - frontend
       - backend
+    networks:
+      - eep_network
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot_staging
+    volumes:
+      - ./certbot/www:/var/www/certbot
+      - ./certbot/conf:/etc/letsencrypt
+      - ./nginx:/etc/nginx/conf.d
+    entrypoint: >
+      sh -c "
+      certbot certonly --webroot -w /var/www/certbot \
+      -d eep.staging.studentdumbways.my.id \
+      -d api.eep.staging.studentdumbways.my.id \
+      --email purwanto.edy.eko@gmail.com \
+      --agree-tos --non-interactive && \
+      nginx -s reload && \
+      while :; do certbot renew --webroot -w /var/www/certbot; sleep 12h; done
+      "
+    depends_on:
+      - webserver
     networks:
       - eep_network
 
@@ -40,57 +94,6 @@ services:
       DB_NAME: wayshub
     depends_on:
       - database
-    networks:
-      - eep_network
-
-  migration:
-    build:
-      context: ./wayshub-backend
-      dockerfile: Dockerfile
-    container_name: migration_staging
-    command: >
-      sh -c "npx sequelize db:create && npx sequelize db:migrate"
-    environment:
-      NODE_ENV: staging
-      DB_HOST: database
-      DB_USER: root
-      DB_PASSWORD: root
-      DB_NAME: wayshub
-    depends_on:
-      - database
-    networks:
-      - eep_network
-
-  database:
-    image: mysql:8
-    container_name: db_staging
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: wayshub
-    volumes:
-      - db_staging:/var/lib/mysql
-    networks:
-      - eep_network
-
-  certbot-init:
-    image: certbot/certbot
-    container_name: certbot_init
-    volumes:
-      - ./certbot/www:/var/www/certbot
-      - ./certbot/conf:/etc/letsencrypt
-    entrypoint: >
-      sh -c "
-      certbot certonly --webroot
-      --webroot-path=/var/www/certbot
-      -d api.eep.staging.studentdumbways.my.id
-      -d eep.staging.studentdumbways.my.id
-      --email purwanto.edy.eko@gmail.com
-      --agree-tos
-      --non-interactive
-      "
-    depends_on:
-      - webserver
     networks:
       - eep_network
 
