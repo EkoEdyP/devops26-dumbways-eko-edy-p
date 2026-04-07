@@ -34,6 +34,17 @@
     2. add permission → `chmod +x install_docker.sh`
     3. run to install docker → `sudo ./install_docker.sh`
 - Deploy aplikasi Web Server, Frontend, Backend, serta Database on top docker compose
+
+    *FOLDER STRUCTURE*
+    dumbways-app/
+    ├── docker-compose.yaml
+    ├── wayshub-backend/
+    │   ├── Dockerfile
+    │   └── (source code backend)
+    └── wayshub-frontend/
+        ├── Dockerfile
+        └── (source code frontend)
+
     1. buat Dockerfile di backend
     ```bash
     FROM node:14
