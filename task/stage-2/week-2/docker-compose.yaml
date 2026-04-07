@@ -45,7 +45,7 @@ services:
       dockerfile: Dockerfile
     container_name: migration_staging
     command: >
-      sh -c "npx sequelize db:migrate && npx sequelize db:seed:all"
+      sh -c "npx sequelize db:create && npx sequelize db:migrate"
     environment:
       NODE_ENV: staging
       DB_HOST: database
