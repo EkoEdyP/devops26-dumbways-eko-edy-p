@@ -80,6 +80,7 @@
 
     CMD ["pm2-runtime", "start", "ecosystem.config.js"]
     ```
+    3. create file nano `docker-compose.yaml di dumbways-app` and copy this file → [script docker-compose.yaml](https://github.com/EkoEdyP/devops26-dumbways-eko-edy-p/blob/main/task/stage-2/week-2/docker-compose.yaml)
 
 
 
