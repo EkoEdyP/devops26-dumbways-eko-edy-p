@@ -85,7 +85,7 @@ services:
       --webroot-path=/var/www/certbot
       -d api.eep.staging.studentdumbways.my.id
       -d eep.staging.studentdumbways.my.id
-      --email emailkamu@gmail.com
+      --email purwanto.edy.eko@gmail.com
       --agree-tos
       --non-interactive
       "
