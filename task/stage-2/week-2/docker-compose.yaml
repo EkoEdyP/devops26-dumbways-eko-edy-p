@@ -31,6 +31,23 @@ services:
     networks:
       - eep_network
 
+  backend:
+    build:
+      context: ./wayshub-backend
+      dockerfile: Dockerfile
+    container_name: wayshub-backend_staging
+    restart: always
+    environment:
+      NODE_ENV: staging
+      DB_HOST: database
+      DB_USER: eep-db-staging
+      DB_PASSWORD: MySql@123
+      DB_NAME: wayshub
+    depends_on:
+      - database
+    networks:
+      - eep_network
+
   webserver:
     image: nginx:alpine
     container_name: webserver_staging
@@ -77,23 +94,6 @@ services:
     restart: always
     environment:
       NODE_ENV: staging
-    networks:
-      - eep_network
-
-  backend:
-    build:
-      context: ./wayshub-backend
-      dockerfile: Dockerfile
-    container_name: wayshub-backend_staging
-    restart: always
-    environment:
-      NODE_ENV: staging
-      DB_HOST: database
-      DB_USER: root
-      DB_PASSWORD: root
-      DB_NAME: wayshub
-    depends_on:
-      - database
     networks:
       - eep_network
 
