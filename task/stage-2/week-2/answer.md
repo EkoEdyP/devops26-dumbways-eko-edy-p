@@ -33,6 +33,26 @@
     1. create file `nano install-docker.sh` and copy this file → [script install docker](https://github.com/EkoEdyP/devops26-dumbways-eko-edy-p/blob/main/task/stage-2/week-2/install-docker.sh)
     2. add permission → `chmod +x install_docker.sh`
     3. run to install docker → `sudo ./install_docker.sh`
+- Deploy aplikasi Web Server, Frontend, Backend, serta Database on top docker compose
+    1. buat Dockerfile di backend
+    ```bash
+    FROM node:18
+
+    WORKDIR /app
+
+    COPY package*.json ./
+    RUN npm install
+
+    COPY . .
+
+    RUN npm install -g pm2
+
+    EXPOSE 5000
+
+    CMD ["pm2-runtime", "start", "ecosystem.config.js"]
+    ```
+    2. buat Dockerfile di frontend
+
 
 
 
