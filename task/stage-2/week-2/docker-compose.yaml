@@ -19,6 +19,9 @@ services:
       context: ./wayshub-frontend
       dockerfile: Dockerfile
     container_name: wayshub-frontend_staging
+    restart: always
+    environment:
+      NODE_ENV: staging
     networks:
       - eep_network
 
