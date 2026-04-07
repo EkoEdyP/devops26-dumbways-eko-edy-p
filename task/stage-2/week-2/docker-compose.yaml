@@ -47,6 +47,8 @@ services:
       - database
     networks:
       - eep_network
+    ports:
+      - "5000:5000"
 
   webserver:
     image: nginx:alpine
