@@ -36,6 +36,7 @@
 - Deploy aplikasi Web Server, Frontend, Backend, serta Database on top docker compose
 
     *FOLDER STRUCTURE*
+    ```
     dumbways-app/
     ├── docker-compose.yaml
     ├── wayshub-backend/
@@ -44,6 +45,7 @@
     └── wayshub-frontend/
         ├── Dockerfile
         └── (source code frontend)
+    ```    
 
     1. buat Dockerfile di backend
     ```bash
