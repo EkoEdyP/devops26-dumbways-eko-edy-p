@@ -82,8 +82,8 @@
     ```
     3. create file nano `docker-compose.yaml di dumbways-app` and copy this file → [script docker-compose.yaml](https://github.com/EkoEdyP/devops26-dumbways-eko-edy-p/blob/main/task/stage-2/week-2/docker-compose.yaml)
     4. make sure backend config on `~/dumbways-app/wayshub-backendconfig/config.json`
-    5. and also moke sure backend config on`~/dumbways-app/wayshub-backend/ecosystem.config.js`
+    5. and also make sure backend config on`~/dumbways-app/wayshub-backend/ecosystem.config.js`
     6. make sure frontend config on `~/dumbways-app/wayshub-frontend/src/config/api.js`
-    7. and also moke sure frontend config on`~/dumbways-app/wayshub-frontend/ecosystem.config.js`
+    7. and also make sure frontend config on`~/dumbways-app/wayshub-frontend/ecosystem.config.js`
 
 
