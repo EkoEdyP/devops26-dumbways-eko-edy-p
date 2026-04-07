@@ -90,5 +90,6 @@
     5. and also make sure backend config on`~/dumbways-app/wayshub-backend/ecosystem.config.js`
     6. make sure frontend config on `~/dumbways-app/wayshub-frontend/src/config/api.js`
     7. and also make sure frontend config on`~/dumbways-app/wayshub-frontend/ecosystem.config.js`
+    8. 
 
 
