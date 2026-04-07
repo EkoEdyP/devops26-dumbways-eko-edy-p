@@ -42,10 +42,10 @@
 
     COPY package*.json ./
     RUN npm install
+    RUN npm install -g sequelize-cli
+    RUN npm install pm2@latest -g
 
     COPY . .
-
-    RUN npm i -g sequelize-cli pm2@latest -g
 
     EXPOSE 5000
 
