@@ -47,7 +47,7 @@
         └── (source code frontend)
     ```    
 
-    1. buat Dockerfile di backend
+    1. buat Dockerfile di `wayshub-backend`
     ```bash
     FROM node:14
 
@@ -64,7 +64,7 @@
 
     CMD ["pm2-runtime", "start", "ecosystem.config.js"]
     ```
-    2. buat Dockerfile di frontend
+    2. buat Dockerfile di `wayshub-frontend`
     ```bash
     FROM node:14
 
