@@ -39,9 +39,14 @@
     ```
     dumbways-app/
     ├── docker-compose.yaml
+    │
+    ├── nginx/
+    │   └── (nginx configuration)
+    │
     ├── wayshub-backend/
     │   ├── Dockerfile
     │   └── (source code backend)
+    │
     └── wayshub-frontend/
         ├── Dockerfile
         └── (source code frontend)
