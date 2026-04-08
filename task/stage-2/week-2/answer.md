@@ -8,16 +8,10 @@
 
 ##### **Prerequisite**
 - cloud (Ubuntu Server 22.04.x LTS)
-- Docker
+- Docker (node 14, mysql, sequelize-cli, PM2)
 - clone backend, frontend repository
-- nvm 
-- mysql-server
-- mysql-client
 - UFW
-- sequelize-cli
-- PM2
-- register dash.cloudflare account
-- nginx
+- register dash.cloudflare account for DNS
 - certbot
 
 ##### **Steps to Complete the Task**
