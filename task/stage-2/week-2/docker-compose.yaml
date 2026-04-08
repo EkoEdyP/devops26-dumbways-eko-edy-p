@@ -62,40 +62,16 @@ services:
       - "3000:3000"
 
   webserver:
-    image: nginx:alpine
+    image: nginx
     container_name: webserver_staging
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx:/etc/nginx/conf.d
-      - ./certbot/www:/var/www/certbot
-      - ./certbot/conf:/etc/letsencrypt
+      - ./nginx/:/etc/nginx/conf.d/
     depends_on:
       - frontend
       - backend
-    networks:
-      - eep_network
-
-  certbot:
-    image: certbot/certbot
-    container_name: certbot_staging
-    volumes:
-      - ./certbot/www:/var/www/certbot
-      - ./certbot/conf:/etc/letsencrypt
-      - ./nginx:/etc/nginx/conf.d
-    entrypoint: >
-      sh -c "
-      certbot certonly --webroot -w /var/www/certbot \
-      -d eep.staging.studentdumbways.my.id \
-      -d api.eep.staging.studentdumbways.my.id \
-      --email purwanto.edy.eko@gmail.com \
-      --agree-tos --non-interactive && \
-      nginx -s reload && \
-      while :; do certbot renew --webroot -w /var/www/certbot; sleep 12h; done
-      "
-    depends_on:
-      - webserver
     networks:
       - eep_network
 

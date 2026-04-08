@@ -38,13 +38,8 @@
     *FOLDER STRUCTURE*
     ```
     dumbways-app/
+    │
     ├── docker-compose.yaml
-    │
-    ├── nginx(docker volume)/
-    │   └── (nginx configuration)
-    │
-    ├── certbot(docker volume)/
-    │   └── (cerbot configuration)
     │
     ├── mysql(mysql volume)/
     │   └── (mysql configuration)
@@ -53,9 +48,16 @@
     │   ├── Dockerfile
     │   └── (source code backend)
     │
-    └── wayshub-frontend/
-        ├── Dockerfile
-        └── (source code frontend)
+    ├── wayshub-frontend/
+    │   ├── Dockerfile
+    │   └── (source code backend)
+    │
+    ├── nginx(nginx volume)/
+    │   └── (nginx configuration)
+    │
+    └── certbot(certbot volume)/
+        └── (certbot configuration)
+
     ```    
 
     1. buat Dockerfile di `wayshub-backend`
