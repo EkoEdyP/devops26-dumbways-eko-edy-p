@@ -53,45 +53,45 @@
         └── (certbot configuration)
 
     ```    
+    1. create file `nano docker-compose.yaml` and copy this file → [docker-compose.yaml](https://github.com/EkoEdyP/devops26-dumbways-eko-edy-p/blob/main/task/stage-2/week-2/docker-compose.yaml)
+    2.
+    3. buat Dockerfile di `wayshub-backend`
+        ```bash
+        FROM node:14
 
-    1. buat Dockerfile di `wayshub-backend`
-    ```bash
-    FROM node:14
+        WORKDIR /app
 
-    WORKDIR /app
+        COPY package*.json ./
+        RUN npm install
+        RUN npm install -g sequelize-cli
+        RUN npm install pm2@latest -g
 
-    COPY package*.json ./
-    RUN npm install
-    RUN npm install -g sequelize-cli
-    RUN npm install pm2@latest -g
+        COPY . .
 
-    COPY . .
+        EXPOSE 5000
 
-    EXPOSE 5000
+        CMD ["pm2-runtime", "start", "ecosystem.config.js"]
+        ```
 
-    CMD ["pm2-runtime", "start", "ecosystem.config.js"]
-    ```
-    2. buat Dockerfile di `wayshub-frontend`
-    ```bash
-    FROM node:14
+        1. make sure backend config on `~/dumbways-app/wayshub-backendconfig/config.json`
+        2. and also make sure backend config on`~/dumbways-app/wayshub-backend/ecosystem.config.js`
+    4. buat Dockerfile di `wayshub-frontend`
+        ```bash
+        FROM node:14
 
-    WORKDIR /app
+        WORKDIR /app
 
-    COPY package*.json ./
-    RUN npm install
-    RUN npm install pm2@latest -g
+        COPY package*.json ./
+        RUN npm install
+        RUN npm install pm2@latest -g
 
-    COPY . .
+        COPY . .
 
-    EXPOSE 3000
+        EXPOSE 3000
 
-    CMD ["pm2-runtime", "start", "ecosystem.config.js"]
-    ```
-    3. create file nano `docker-compose.yaml di dumbways-app` and copy this file → [script docker-compose.yaml](https://github.com/EkoEdyP/devops26-dumbways-eko-edy-p/blob/main/task/stage-2/week-2/docker-compose.yaml)
-    4. make sure backend config on `~/dumbways-app/wayshub-backendconfig/config.json`
-    5. and also make sure backend config on`~/dumbways-app/wayshub-backend/ecosystem.config.js`
-    6. make sure frontend config on `~/dumbways-app/wayshub-frontend/src/config/api.js`
-    7. and also make sure frontend config on`~/dumbways-app/wayshub-frontend/ecosystem.config.js`
-    8. 
+        CMD ["pm2-runtime", "start", "ecosystem.config.js"]
+        ```
+        1. make sure frontend config on `~/dumbways-app/wayshub-frontend/src/config/api.js`
+        2. and also make sure frontend config on`~/dumbways-app/wayshub-frontend/ecosystem.config.js`
 
 
