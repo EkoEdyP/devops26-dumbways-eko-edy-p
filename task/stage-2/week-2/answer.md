@@ -35,7 +35,7 @@
     │
     ├── docker-compose.yaml
     │
-    ├── mysql(mysql volume)/
+    ├── mysql (mysql volume)/
     │   └── (mysql configuration)
     │
     ├── wayshub-backend/
@@ -46,10 +46,10 @@
     │   ├── Dockerfile
     │   └── (source code backend)
     │
-    ├── nginx(nginx volume)/
+    ├── nginx (nginx volume)/
     │   └── (nginx configuration)
     │
-    └── certbot(certbot volume)/
+    └── certbot (certbot volume)/
         └── (certbot configuration)
 
     ```    
