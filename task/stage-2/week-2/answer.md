@@ -54,7 +54,7 @@
 
     ```    
     1. create file `nano docker-compose.yaml` and copy this file → [docker-compose.yaml](https://github.com/EkoEdyP/devops26-dumbways-eko-edy-p/blob/main/task/stage-2/week-2/docker-compose.yaml)
-    2. make sure your database environment on docker-compose.yaml is valid
+    2. make sure your database environment and migration environment on docker-compose.yaml is valid
     3. buat Dockerfile di `wayshub-backend`
         ```bash
         FROM node:14
@@ -93,5 +93,6 @@
         ```
         1. make sure frontend config on `~/dumbways-app/wayshub-frontend/src/config/api.js`
         2. and also make sure frontend config on`~/dumbways-app/wayshub-frontend/ecosystem.config.js`
+    5.     
 
 
