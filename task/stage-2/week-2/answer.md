@@ -93,6 +93,6 @@
         ```
         1. make sure frontend config on `~/dumbways-app/wayshub-frontend/src/config/api.js`
         2. and also make sure frontend config on`~/dumbways-app/wayshub-frontend/ecosystem.config.js`
-    5.     
+    5. create nginx configuration on `./nginx/`
 
 
