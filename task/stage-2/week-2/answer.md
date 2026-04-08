@@ -31,9 +31,9 @@
 
     *FOLDER STRUCTURE*
     ```
-    dumbways-app/
+    *dumbways-app*/
     │
-    ├── docker-compose.yaml
+    ├── **docker-compose.yaml**
     │
     ├── mysql(mysql volume)/
     │   └── (mysql configuration)
