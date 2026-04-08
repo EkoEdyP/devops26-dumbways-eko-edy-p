@@ -27,7 +27,7 @@
     1. create file `nano install-docker.sh` and copy this file → [script install docker](https://github.com/EkoEdyP/devops26-dumbways-eko-edy-p/blob/main/task/stage-2/week-2/install-docker.sh)
     2. add permission → `chmod +x install_docker.sh`
     3. run to install docker → `sudo ./install_docker.sh`
-- Deploy aplikasi Web Server, Frontend, Backend, serta Database on top docker compose
+- Deploy aplikasi Web Server, Frontend, Backend, serta Database on top docker compose (STAGING)
 
     *FOLDER STRUCTURE*
     ```
@@ -94,5 +94,5 @@
         1. make sure frontend config on `~/dumbways-app/wayshub-frontend/src/config/api.js`
         2. and also make sure frontend config on`~/dumbways-app/wayshub-frontend/ecosystem.config.js`
     5. create nginx configuration on `./nginx/`
-
+- Deploy aplikasi Web Server, Frontend, Backend, serta Database on top docker compose (PRODUCTION)
 
