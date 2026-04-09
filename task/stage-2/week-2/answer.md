@@ -146,7 +146,26 @@
     ---
 ### *[Jenkins]*
 
+- Installasi Jenkins on top Docker with `docker-compose.yaml`
+```
+# buat folder wayshub
+mkdir wayshub
 
+# change to wayshub dir
+cd wayshub
+
+# create docker-compose.yaml file and copy code bellow
+nano docker-compose.yaml
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    restart: always
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+```
 
 
 
