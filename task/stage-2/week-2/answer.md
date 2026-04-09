@@ -187,7 +187,11 @@ services:
     11. paste on App server → `~/.ssh/authorized_keys`
     9. create credential
     ![gambar](/task/stage-2/week-2/asset/credential.jenkins.png)
-    10. 
+    10. create pipeline
+    ![gambar](/task/stage-2/week-2/asset/pipeline.jenkins.png)
+    ![gambar](/task/stage-2/week-2/asset/pipeline2.jenkins.png)
+
+
 
 
 
