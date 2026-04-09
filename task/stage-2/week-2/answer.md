@@ -156,6 +156,8 @@ cd wayshub
 
 # create docker-compose.yaml file and copy code bellow
 nano docker-compose.yaml
+
+services:
   jenkins:
     image: jenkins/jenkins:lts
     container_name: jenkins
