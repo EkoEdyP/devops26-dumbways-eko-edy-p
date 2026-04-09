@@ -177,6 +177,14 @@ services:
     5. choose plugins u want install, and then install it
     ![gambar](/task/stage-2/week-2/asset/plugins.jenkins.png)
     ![gambar](/task/stage-2/week-2/asset/plugins.jenkins.install.png)
+    6. create user
+    7. determine instance configuration and klik `save and finish`
+    ![gambar](/task/stage-2/week-2/asset/instance.conf.jenkins.png)
+    8. klik `start using jenkins`
+    ![gambar](/task/stage-2/week-2/asset/start.jenkins.png)
+    9. 
+
+
 
 
 
