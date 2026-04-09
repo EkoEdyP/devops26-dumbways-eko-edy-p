@@ -122,10 +122,13 @@
         6. run `docker compose up -d`        
     2. create SERVER for `deploy wayshub-backend, wayshub-frontend and nginx`
     ![gambar](/task/stage-2/week-2/asset/vm-appserver.png)
-        1. Create a new docker user and login with the new user.
-        ![gambar](https://private-user-images.githubusercontent.com/48948871/575090141-79f30130-023d-4700-950b-057aa5f244c3.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzU2OTYzNTksIm5iZiI6MTc3NTY5NjA1OSwicGF0aCI6Ii80ODk0ODg3MS81NzUwOTAxNDEtNzlmMzAxMzAtMDIzZC00NzAwLTk1MGItMDU3YWE1ZjI0NGMzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA0MDklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNDA5VDAwNTQxOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTJlMDI1YTk1OTBkYmFkOGMzN2I0ODAwOTMwYzkyYTkxMmZjMGUxOTcyY2I5MmYxNjA4OGI3ZjliNGVhYzExMzcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.9WHPv63cZH-q1AuFODKMSXjIM0Lesu6HWTtJ_inUMJ0)
-        2. Make a new directory for the app, then clone the frontend and the backend
-        ![gambar](https://private-user-images.githubusercontent.com/48948871/575102914-94deb1be-7139-4daa-8265-87819f3a25d0.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzU2OTYzNTksIm5iZiI6MTc3NTY5NjA1OSwicGF0aCI6Ii80ODk0ODg3MS81NzUxMDI5MTQtOTRkZWIxYmUtNzEzOS00ZGFhLTgyNjUtODc4MTlmM2EyNWQwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA0MDklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNDA5VDAwNTQxOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTMwOTc0YjUyZWQxM2ZjOWEwMzZhMmFhZGY0NWRkYTNkYmY1ZTBhMTZlZDMxNjM4ZjBjZDVmZjI5ZjIxMjE5NTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.RdxPelz3hgdqAG8_hqqpmK08gAZlgXzBMMjl7Ii5AUQ)
+        1. install docker
+        2. create user `kelompok2` and allow docker without sudo
+        3. Make a new directory `mkdir wayshub` for the app, then clone the wayshub-backend and the wayshub-frontend
+        4. Make "Dockerfile" for both the wayshub-backend and the wayshub-frontend.
+        ![gambar](https://private-user-images.githubusercontent.com/48948871/575106135-12a50ad9-bafb-41af-ad3c-da719cb4d6b0.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzU2OTYzNTksIm5iZiI6MTc3NTY5NjA1OSwicGF0aCI6Ii80ODk0ODg3MS81NzUxMDYxMzUtMTJhNTBhZDktYmFmYi00MWFmLWFkM2MtZGE3MTljYjRkNmIwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA0MDklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNDA5VDAwNTQxOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTBhM2Y1M2VmZTY5ZGQyNjRjYmMzNzFjNGEyNTM4NWZiNjkwMDYxYWZhNjNjZWZjYmU1ZTBmMDhhNWI5MTc2MGImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.XpmetoRJ9Ryq_zouN-cUNRV0mD0PU6R05mD-mxtZV4U)
+
+
 
 
     
