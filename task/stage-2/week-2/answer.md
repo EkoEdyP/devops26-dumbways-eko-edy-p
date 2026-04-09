@@ -96,7 +96,7 @@
     5. create nginx configuration on `./nginx/`
 - Deploy aplikasi Web Server, Frontend, Backend, serta Database on top docker compose (*PRODUCTION*)
 
-    1. create SERVER for deploy database
+    1. create SERVER for `deploy database`
     ![gambar](/task/stage-2/week-2/asset/vm-cicd.png)
         1. install docker
         2. create user `kelompok2` and allow docker without sudo
@@ -120,5 +120,12 @@
         ```
         5. allow ufw on port `3306 and 22`
         6. run `docker compose up -d`        
+    2. create SERVER for `deploy wayshub-backend, wayshub-frontend and nginx`
+    ![gambar](/task/stage-2/week-2/asset/vm-appserver.png)
+        1. Create a new docker user and login with the new user.
+        ![gambar](https://private-user-images.githubusercontent.com/48948871/575090141-79f30130-023d-4700-950b-057aa5f244c3.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzU2OTYzNTksIm5iZiI6MTc3NTY5NjA1OSwicGF0aCI6Ii80ODk0ODg3MS81NzUwOTAxNDEtNzlmMzAxMzAtMDIzZC00NzAwLTk1MGItMDU3YWE1ZjI0NGMzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA0MDklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNDA5VDAwNTQxOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTJlMDI1YTk1OTBkYmFkOGMzN2I0ODAwOTMwYzkyYTkxMmZjMGUxOTcyY2I5MmYxNjA4OGI3ZjliNGVhYzExMzcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.9WHPv63cZH-q1AuFODKMSXjIM0Lesu6HWTtJ_inUMJ0)
+
+
+    
 
 
