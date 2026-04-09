@@ -182,7 +182,13 @@ services:
     ![gambar](/task/stage-2/week-2/asset/instance.conf.jenkins.png)
     8. klik `start using jenkins`
     ![gambar](/task/stage-2/week-2/asset/start.jenkins.png)
-    9. 
+    9. create ssh-key on Jenkins server → `ssh-keygen -t rsa -b 4096`
+    10. copy pub key → `cat ~/.ssh/id_rsa.pub`
+    11. paste on App server → `~/.ssh/authorized_keys`
+    9. create credential
+    ![gambar](/task/stage-2/week-2/asset/credential.jenkins.png)
+    10. 
+
 
 
 
