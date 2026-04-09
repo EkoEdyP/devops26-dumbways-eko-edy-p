@@ -96,3 +96,29 @@
     5. create nginx configuration on `./nginx/`
 - Deploy aplikasi Web Server, Frontend, Backend, serta Database on top docker compose (*PRODUCTION*)
 
+    1. create SERVER for deploy database
+    ![gambar](/task/stage-2/week-2/asset/vm-cicd.png)
+        1. install docker
+        2. create user `kelompok2` and allow docker without sudo
+        3. create folder `mkdir wayshub`
+        4. create file on wayhshub `sudo nano docker-compose.yaml`
+        ```
+        services:
+        database:
+            image: mysql
+            container_name: db_production
+            restart: always
+            environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: k2
+            MYSQL_PASSWORD: k2
+            MYSQL_DATABASE: wayshub
+            ports:
+            - "3306:3306"
+            volumes:
+            - ./mysql:/var/lib/mysql
+        ```
+        5. allow ufw on port `3306 and 22`
+        6. run `docker compose up -d`        
+
+
