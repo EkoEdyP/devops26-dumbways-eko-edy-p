@@ -173,6 +173,12 @@ services:
     2. get admin password → `docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword`
     3. open `http://IP_SERVER:8080` and paste admin password
     ![gambar](/task/stage-2/week-2/asset/unlock.jenkins.png)
+    4. select plugins to install
+    5. choose plugins u want install, and then install it
+    ![gambar](/task/stage-2/week-2/asset/plugins.jenkins.png)
+    ![gambar](/task/stage-2/week-2/asset/plugins.jenkins.install.png)
+
+
 
 
 
