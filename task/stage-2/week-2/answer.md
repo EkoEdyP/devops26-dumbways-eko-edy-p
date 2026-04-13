@@ -198,6 +198,15 @@ services:
     15. add webhooks on discord
     ![gambar](/task/stage-2/week-2/asset/webhooks.discord.png)
     16. run build on Jenkins
+        
+### *[Github Action]*
+
+- create script for github action on [.github/workflows/FILENAME.yaml](https://github.com/EkoEdyP/wayshub-backend/blob/main/.github/workflows/cicd.yaml)
+- set Secret Variable
+    ![gambar](/task/stage-2/week-2/asset/sec.var.png)
+- run github action
+    ![gambar](/task/stage-2/week-2/asset/gh.action.png)
+
 
 
 
