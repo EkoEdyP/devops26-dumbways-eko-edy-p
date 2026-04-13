@@ -1,0 +1,103 @@
+def branch = "main"
+def repo = "https://github.com/EkoEdyP/wayshub-backend.git"
+def appName = "wayshub-backend"
+def imageName = "kelompok2/wayshub-backend"
+def tag = "latest"
+
+def server = "eep@103.197.189.7"
+def directory = "/home/eep-jenkins/wayshub-backend"
+
+def sshCred = "eep-jenkins-id"
+def dockerHubCred = "dockerhub-cred"
+
+pipeline {
+    agent any
+
+    triggers {
+        githubPush() // auto trigger dari GitHub webhook
+    }
+
+    stages {
+
+        stage('Clone Repository') {
+            steps {
+                git branch: "${branch}", url: "${repo}"
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh "docker build -t ${imageName}:${tag} ."
+            }
+        }
+
+        stage('Test Application') {
+            steps {
+                sh """
+                docker run -d --name test-${appName} -p 5000:5000 ${imageName}:${tag}
+                sleep 10
+                curl -f http://localhost:5000 || exit 1
+                docker stop test-${appName}
+                docker rm test-${appName}
+                """
+            }
+        }
+
+        stage('Push to Docker Hub') {
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: dockerHubCred,
+                    usernameVariable: 'DOCKER_USER',
+                    passwordVariable: 'DOCKER_PASS'
+                )]) {
+                    sh """
+                    echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+                    docker push ${imageName}:${tag}
+                    """
+                }
+            }
+        }
+
+        stage('Deploy to Server') {
+            steps {
+                sshagent([sshCred]) {
+                    sh """
+                    ssh -o StrictHostKeyChecking=no ${server} << 'EOF'
+                    
+                    docker pull ${imageName}:${tag}
+
+                    docker stop ${appName} || true
+                    docker rm ${appName} || true
+
+                    docker run -d -p 5000:5000 \
+                    --name ${appName} \
+                    --restart always \
+                    ${imageName}:${tag}
+
+                    EOF
+                    """
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            sh """
+            curl -H "Content-Type: application/json" \
+            -X POST \
+            -d '{"content": "✅ CI/CD SUCCESS: ${appName} berhasil di-deploy!"}' \
+            https://discord.com/api/webhooks/1492107076854612060/2f9OimKVpWqoQq4xhjkhxZ15o7bj_OJKcYDCZQEOI1MC51yjZI35nAp3EEuMURxk4L8D
+            """
+        }
+
+        failure {
+            sh """
+            curl -H "Content-Type: application/json" \
+            -X POST \
+            -d '{"content": "❌ CI/CD FAILED: ${appName} gagal deploy!"}' \
+            https://discord.com/api/webhooks/1492107076854612060/2f9OimKVpWqoQq4xhjkhxZ15o7bj_OJKcYDCZQEOI1MC51yjZI35nAp3EEuMURxk4L8D
+            """
+        }
+    }
+}
