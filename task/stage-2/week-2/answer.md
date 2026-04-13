@@ -71,6 +71,31 @@
         EXPOSE 5000
 
         CMD ["pm2-runtime", "start", "ecosystem.config.js"]
+
+        # Builder
+        FROM node:18-alpine AS builder
+
+        WORKDIR /app
+
+        COPY package*.json ./
+        RUN npm install
+
+        COPY . .
+
+        # Production
+        FROM node:18-alpine
+
+        WORKDIR /app
+
+        RUN npm install -g pm2 sequelize-cli
+
+        COPY --from=builder /app /app
+
+        RUN npm prune --omit=dev
+
+        EXPOSE 5000
+
+        CMD ["pm2-runtime", "start", "ecosystem.config.js"]
         ```
 
         1. make sure backend config on `~/dumbways-app/wayshub-backendconfig/config.json`
@@ -206,6 +231,8 @@ services:
     ![gambar](/task/stage-2/week-2/asset/sec.var.png)
 - run github action
     ![gambar](/task/stage-2/week-2/asset/gh.action.png)
+- make sure `Deploy SUCCESS` on discord    
+    ![gambar](/task/stage-2/week-2/asset/notif.dc.png)
 
 
 
