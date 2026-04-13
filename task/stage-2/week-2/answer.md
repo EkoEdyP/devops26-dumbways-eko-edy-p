@@ -191,7 +191,7 @@ services:
     ![gambar](/task/stage-2/week-2/asset/pipeline.jenkins.png)
     ![gambar](/task/stage-2/week-2/asset/pipeline2.jenkins.png)
     11. clone source code on jenkins server
-    12. create `Jenkinfile` → ![jenkinsfile]()
+    12. create `Jenkinfile` → ![jenkinsfile](https://github.com/EkoEdyP/devops26-dumbways-eko-edy-p/blob/main/task/stage-2/week-2/Jenkinsfile)
     13. push to github
     14. add webhooks on github
     ![gambar](/task/stage-2/week-2/asset/github.webhooks.png)
