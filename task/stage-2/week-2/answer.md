@@ -195,7 +195,9 @@ services:
     13. push to github
     14. add webhooks on github
     ![gambar](/task/stage-2/week-2/asset/github.webhooks.png)
-    15. run build on Jenkins
+    15. add webhooks on discord
+    ![gambar](/task/stage-2/week-2/asset/webhooks.discord.png)
+    16. run build on Jenkins
 
 
 
