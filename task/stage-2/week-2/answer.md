@@ -232,7 +232,7 @@ services:
 - run github action
     ![gambar](/task/stage-2/week-2/asset/gh.action.png)
 - make sure `Deploy SUCCESS` on discord    
-    ![gambar](/task/stage-2/week-2/asset/notif.dc.png)
+    ![gambar](/task/stage-2/week-2/asset/dc.notify.png)
 
 
 
