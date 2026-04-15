@@ -32,20 +32,20 @@ Automation
     │
     └──Terraform
             │
-            └────── gcp
-                │ └── main.tf
-                │ └── providers.tf
-                │ └── etc
+            └──────gcp
+                │    └── main.tf
+                │    └── providers.tf
+                │    └── etc
                 │
-                ├── aws
-                │ └── main.tf
-                │ └── providers.tf
-                │ └── etc
+                ├──aws
+                │    └── main.tf
+                │    └── providers.tf
+                │    └── etc
                 │
-                ├── azure
-                │ └── main.tf
-                │ └── providers.tf
-                │ └── etc
+                └──azure
+                     └── main.tf
+                     └── providers.tf
+                     └── etc
 ```
 Reference :
 
