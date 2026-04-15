@@ -23,7 +23,7 @@ terraform version
 ![gambar](/task/stage-2/week-3/asset/api.token.png)
 ![gambar](/task/stage-2/week-3/asset/api.token.2.png)
 - get billing id
-![gambar](/task/stage-2/week-3/asset/billing.id.2.png)
+![gambar](/task/stage-2/week-3/asset/billing.id.png)
 - install plugin for syntax highlighting and autocompletion (if u use VS CODE)
 ![gambar](/task/stage-2/week-3/asset/plugin.terraform.png)
 - manage terraform
