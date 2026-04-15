@@ -28,24 +28,22 @@
     - simpan script kalian ke dalam github dengan format tree sebagai berikut:
 ```sh
 
-Automation
+Automation/
+└── Terraform/
+    ├── gcp/
+    │   ├── main.tf
+    │   ├── providers.tf
+    │   └── etc
     │
-    └──Terraform
-            │
-            └──────gcp
-                │    └── main.tf
-                │    └── providers.tf
-                │    └── etc
-                │
-                ├──aws
-                │    └── main.tf
-                │    └── providers.tf
-                │    └── etc
-                │
-                └──azure
-                     └── main.tf
-                     └── providers.tf
-                     └── etc
+    ├── aws/
+    │   ├── main.tf
+    │   ├── providers.tf
+    │   └── etc
+    │
+    └── azure/
+        ├── main.tf
+        ├── providers.tf
+        └── etc
 ```
 Reference :
 
