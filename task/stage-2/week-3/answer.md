@@ -28,6 +28,9 @@ terraform version
 ![gambar](/task/stage-2/week-3/asset/plugin.terraform.png)
 - manage terraform
     - u can create folder structure and implement your conf on file
+    [automation script](https://github.com/EkoEdyP/automation)
+    ![gambar](/task/stage-2/week-3/asset/tree.png)
+
 
 ---
 ### *[ Ansible ]*
