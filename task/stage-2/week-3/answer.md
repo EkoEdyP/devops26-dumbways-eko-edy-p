@@ -30,11 +30,24 @@ terraform version
     - u can create folder structure and implement your conf on file
         - [automation script](https://github.com/EkoEdyP/automation)
         ![gambar](/task/stage-2/week-3/asset/tree.png)
-
+- init terraform `terraform init`
+![gambar](/task/stage-2/week-3/asset/init.terraform.png)
+- checking plan terraform `terraform plan`
+![gambar](/task/stage-2/week-3/asset/plan.terraform.png)
+- apply terraform `terraform apply`
+![gambar](/task/stage-2/week-3/asset/plan.terraform.png)
 
 ---
 ### *[ Ansible ]*
--
+- install ansible
+```sh
+# Update Homebrew: Ensure your packages are up to date
+brew update
+# Install Ansible
+brew install ansible
+# Verify
+ansible --version
+```
 
 ---
 ### *[Monitoring Server]*
