@@ -34,8 +34,8 @@ terraform version
 ![gambar](/task/stage-2/week-3/asset/init.terraform.png)
 - checking plan terraform `terraform plan`
 ![gambar](/task/stage-2/week-3/asset/plan.terraform.png)
-- apply terraform `terraform apply`
-![gambar](/task/stage-2/week-3/asset/plan.terraform.png)
+- apply terraform `terraform apply` and input `yes` for apply
+![gambar](/task/stage-2/week-3/asset/apply.terraform.png)
 
 ---
 ### *[ Ansible ]*
