@@ -65,4 +65,25 @@ ansible --version
 
 ---
 ### *[Monitoring Server]*
--
+- Setup node-exporter, prometheus dan Grafana menggunakan docker via ansible
+[script playbooks monitoring](https://github.com/EkoEdyP/automation/blob/main/ansible/playbooks/04-monitoring.yml)
+[script roles monitoring](https://github.com/EkoEdyP/automation/tree/main/ansible/roles/monitoring)
+[Prometheus](/task/stage-2/week-3/asset/prome.png)
+[Grafana](/task/stage-2/week-3/asset/grafa.png)
+[Node Exporter](/task/stage-2/week-3/asset/nodeexpo.png)
+
+- monitoring seluruh server yang kalian buat di materi terraform dan yang kalian miliki di biznet.
+![gambar](/task/stage-2/week-3/asset/monitoring-dash.png)
+
+
+- Reverse Proxy menggunakan nginx docker via ansible
+[script playbooks nginx](https://github.com/EkoEdyP/automation/blob/main/ansible/playbooks/05-reverse-proxy.yml)
+[script roles nginx](https://github.com/EkoEdyP/automation/tree/main/ansible/roles/nginx)
+
+- Domain
+    - exporter-$name.studentdumbways.my.id (node exporter)
+    - prom-$name.studentdumbways.my.id (prometheus)
+    - monitoring-$name.studentdumbways.my.id (grafana)
+
+- 
+
