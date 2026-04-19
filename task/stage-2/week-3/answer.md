@@ -88,5 +88,33 @@ ansible --version
     - prom-$name.studentdumbways.my.id (prometheus)
     - monitoring-$name.studentdumbways.my.id (grafana)
 
-- 
+- Dashboard untuk monitor resource server (CPU, RAM & Disk Usage)
+![gambar](/task/stage-2/week-3/asset/monitoring.ram.disk.cpu.png)
+
+- dokumentasi tentang rumus promql yang kalian gunakan
+    - Query
+    ```
+    100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
+    ```
+    - Penjelasan
+    - Query ini digunakan untuk menghitung persentase penggunaan CPU pada setiap instance.
+
+    - Cara Kerja
+    - `node_cpu_seconds_total{mode="idle"}`
+        - Mengambil total waktu CPU dalam kondisi idle (tidak digunakan).
+    - `rate(...[5m])`
+        - Menghitung rata-rata perubahan per detik selama 5 menit terakhir.
+    - `avg by(instance)`
+        - Mengambil rata-rata dari semua core CPU dalam satu instance.
+    - `* 100`
+        - Mengubah nilai menjadi persen (%).
+    - `100 - ...`
+        - Karena yang dihitung adalah idle, maka dikurangi dari 100 untuk mendapatkan penggunaan CPU aktif.
+    - Hasil
+    - Nilai output berupa:
+        - 0% → CPU idle (tidak digunakan)
+        - 100% → CPU penuh digunakan
+
+
+
 
