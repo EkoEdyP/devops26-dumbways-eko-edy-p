@@ -92,6 +92,7 @@ ansible --version
 ![gambar](/task/stage-2/week-3/asset/monitoring.ram.disk.cpu.png)
 
 - dokumentasi tentang rumus promql yang kalian gunakan
+- *CPU Usage (%)*
     - Query
     ```
     100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
@@ -114,7 +115,61 @@ ansible --version
         - Nilai output berupa:
             - 0% → CPU idle (tidak digunakan)
             - 100% → CPU penuh digunakan
+---
 
+- *Memory Usage (%)*
+    - Query
+    ```
+    (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100
+    ```
+    - Penjelasan
+        - Query ini digunakan untuk menghitung persentase penggunaan memory (RAM).
+
+    - Cara Kerja
+        - `node_memory_MemTotal_bytes`
+            - Total memory yang tersedia pada sistem.
+        - `node_memory_MemAvailable_bytes`
+            - Memory yang masih tersedia untuk digunakan.
+        - `MemTotal - MemAvailable`
+            - Menghasilkan jumlah memory yang sedang digunakan.
+        - `/ node_memory_MemTotal_bytes`
+            - Menghitung rasio penggunaan terhadap total memory.
+        - `* 100`
+            - Mengubah nilai menjadi persen (%).
+
+    - Hasil
+        - Nilai output berupa:
+            - Mendekati 0% → Memory hampir tidak digunakan
+            - Mendekati 100% → Memory hampir penuh
+
+---
+
+- *Disk Usage (%)*
+    - Query
+    ```
+    (node_filesystem_size_bytes{mountpoint="/",fstype!="tmpfs"} - node_filesystem_free_bytes{mountpoint="/",fstype!="tmpfs"}) / node_filesystem_size_bytes{mountpoint="/",fstype!="tmpfs"} * 100
+    ```
+    - Penjelasan
+        - Query ini digunakan untuk menghitung persentase penggunaan disk pada root filesystem (`/`).
+
+    - Cara Kerja
+        - `node_filesystem_size_bytes`
+            - Total kapasitas filesystem.
+        - `node_filesystem_free_bytes`
+            - Kapasitas yang masih kosong.
+        - `size - free`
+            - Menghasilkan kapasitas yang sudah digunakan.
+        - `mountpoint="/"` dan `fstype!="tmpfs"`
+            - Memfilter hanya disk root dan mengabaikan filesystem sementara (RAM).
+        - `/ node_filesystem_size_bytes`
+            - Menghitung rasio penggunaan terhadap total disk.
+        - `* 100`
+            - Mengubah nilai menjadi persen (%).
+
+    - Hasil
+        - Nilai output berupa:
+            - 0% → Disk kosong
+            - 100% → Disk penuh
 
 
 
