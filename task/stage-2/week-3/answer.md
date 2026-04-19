@@ -68,8 +68,11 @@ ansible --version
 - Setup node-exporter, prometheus dan Grafana menggunakan docker via ansible
     - [script playbooks monitoring](https://github.com/EkoEdyP/automation/blob/main/ansible/playbooks/04-monitoring.yml)
     - [script roles monitoring](https://github.com/EkoEdyP/automation/tree/main/ansible/roles/monitoring)
+    - *Prometheus*
     - ![Prometheus](/task/stage-2/week-3/asset/prome.png)
+    - *Grafana*
     - ![Grafana](/task/stage-2/week-3/asset/grafa.png)
+    - *Node Exporter*
     - ![Node Exporter](/task/stage-2/week-3/asset/nodeexpo.png)
 
 - monitoring seluruh server yang kalian buat di materi terraform dan yang kalian miliki di biznet.
