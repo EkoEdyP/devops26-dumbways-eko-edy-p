@@ -49,6 +49,20 @@ brew install ansible
 ansible --version
 ```
 
+- Membuat user baru, gunakan login ssh key & password
+![gambar](/task/stage-2/week-3/asset/01.png)
+- Instalasi Docker
+![gambar](/task/stage-2/week-3/asset/02.png)
+- Deploy application frontend yang sudah kalian gunakan sebelumnya menggunakan ansible.
+![gambar](/task/stage-2/week-3/asset/03.png)
+- Instalasi Monitoring Server (node exporter, prometheus, grafana)
+![gambar](/task/stage-2/week-3/asset/04.png)
+- Setup reverse-proxy
+![gambar](/task/stage-2/week-3/asset/05.png)
+- Generated SSL certificate
+![gambar](/task/stage-2/week-3/asset/06.png)
+- simpan script kalian ke dalam github [link script ansible](https://github.com/EkoEdyP/automation)
+
 ---
 ### *[Monitoring Server]*
 -
