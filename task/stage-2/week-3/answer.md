@@ -172,4 +172,22 @@ ansible --version
             - 100% → Disk penuh
 
 
+---
+- alerting dengan Contact Point discord dgn ketentuan alert: `CPU Usage over 20%` dan `RAM Usage over 75%`
+    1. create discord webhooks
+    2. create contact point on grafana `Alerting → Contact points → Add contact point`
+    3. buat alert rule `CPU > 20%`
+        1. Alerting → Alert rules → New alert rule
+        2. ![gambar](/task/stage-2/week-3/asset/a1.png)
+        3. ![gambar](/task/stage-2/week-3/asset/a2.png)
+        4. ![gambar](/task/stage-2/week-3/asset/oac.png)
+    4. buat alert rule `RAM > 75%`
+        1. Alerting → Alert rules → New alert rule
+        2. ![gambar](/task/stage-2/week-3/asset/a3.png)
+        3. ![gambar](/task/stage-2/week-3/asset/a4.png)
+        4. ![gambar](/task/stage-2/week-3/asset/oar.png)
+
+---
+
+- Monitoring specific container
 
