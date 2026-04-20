@@ -190,4 +190,7 @@ ansible --version
 ---
 
 - Monitoring specific container
+    - install CaAdvisor on VM
+    - open grafana for create new dashboard spesific container
+    ![gambar](/task/stage-2/week-3/asset/front.monitoring.png)
 
