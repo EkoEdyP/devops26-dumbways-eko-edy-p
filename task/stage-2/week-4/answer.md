@@ -16,9 +16,9 @@
     - VM-1 for Master
     - VM-2 for Worker(app worker)
     - VM-3 for Worker (gateway worker)
-    
+
 1. membuat kubernetes cluster, yang di dalamnya terdapat 3 buah node as a master and worker.
-    - *Master*
+- *Master*
 ```
 # Set hostname
 sudo hostnamectl set-hostname master
@@ -77,8 +77,14 @@ sudo systemctl restart k3s
 # Verify
 kubectl -n ingress-nginx get pods
 kubectl get svc -n ingress-nginx
+
+# Ambil token (MASTER)
+sudo cat /var/lib/rancher/k3s/server/node-token
+```
+- *App*
 ```
 
+```
 2.
 3.
 4.
