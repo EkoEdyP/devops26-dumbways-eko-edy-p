@@ -10,7 +10,75 @@
 
 ### *[Kubernetes]*
 
-1.
+#### Setup
+
+- create 3 VM
+    - VM-1 for Master
+    - VM-2 for Worker(app worker)
+    - VM-3 for Worker (gateway worker)
+    
+1. membuat kubernetes cluster, yang di dalamnya terdapat 3 buah node as a master and worker.
+    - *Master*
+```
+# Set hostname
+sudo hostnamectl set-hostname master
+echo master | sudo tee /etc/hostname
+
+# Install K3s
+curl -sfL https://get.k3s.io | sh -
+
+# Fix kubectl permission
+mkdir -p ~/.kube
+sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+sudo chown $USER:$USER ~/.kube/config
+export KUBECONFIG=~/.kube/config
+
+# Verify
+kubectl get nodes
+kubectl get pods -A
+
+# Edit/create config:
+sudo nano /etc/rancher/k3s/config.yaml
+
+isi:
+cluster-init: true
+disable:
+  - servicelb
+  - traefik
+
+# Restart:
+sudo systemctl restart k3s  
+
+# install ingress NGINX (AUTO DEPLOY K3s) pakai metode manifest auto deploy dari K3s (bukan helm manual)
+sudo tee /var/lib/rancher/k3s/server/manifests/nginx-ingress.yaml > /dev/null <<EOF
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ingress-nginx
+---
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: ingress-nginx
+  namespace: ingress-nginx
+spec:
+  repo: https://kubernetes.github.io/ingress-nginx
+  chart: ingress-nginx
+  targetNamespace: ingress-nginx
+  valuesContent: |-
+    controller:
+      service:
+        type: LoadBalancer
+EOF
+
+# Restart:
+sudo systemctl restart k3s  
+
+# Verify
+kubectl -n ingress-nginx get pods
+kubectl get svc -n ingress-nginx
+```
+
 2.
 3.
 4.
