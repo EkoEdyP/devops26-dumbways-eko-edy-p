@@ -31,7 +31,8 @@ curl -sfL https://get.k3s.io | sh -
 mkdir -p ~/.kube
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 sudo chown $USER:$USER ~/.kube/config
-export KUBECONFIG=~/.kube/config
+echo 'export KUBECONFIG=~/.kube/config' >> ~/.bashrc
+source ~/.bashrc
 
 # Verify
 kubectl get nodes
@@ -101,6 +102,18 @@ curl -sfL https://get.k3s.io | K3S_URL=https://103.197.189.7:6443 \
 K3S_TOKEN=TOKEN_KAMU sh -
 ```
 - ![image](/task/stage-2/week-4/asset/join.gateway.png)
+
+- *Gateway*
+```
+# Verify
+kubectl get nodes
+
+output Harus muncul:
+master
+app
+gateway
+```
+- ![image](/task/stage-2/week-4/asset/verify.png)
 
 2.
 3.
