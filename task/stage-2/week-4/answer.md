@@ -81,10 +81,27 @@ kubectl get svc -n ingress-nginx
 # Ambil token (MASTER)
 sudo cat /var/lib/rancher/k3s/server/node-token
 ```
+
 - *App*
 ```
+# Join ke master
+sudo hostnamectl set-hostname app
 
+curl -sfL https://get.k3s.io | K3S_URL=https://103.197.189.7:6443 \
+K3S_TOKEN=TOKEN_KAMU sh -
 ```
+- ![image](/task/stage-2/week-4/asset/join.app.png)
+
+- *Gateway*
+```
+# Join ke master
+sudo hostnamectl set-hostname gateway
+
+curl -sfL https://get.k3s.io | K3S_URL=https://103.197.189.7:6443 \
+K3S_TOKEN=TOKEN_KAMU sh -
+```
+- ![image](/task/stage-2/week-4/asset/join.gateway.png)
+
 2.
 3.
 4.
