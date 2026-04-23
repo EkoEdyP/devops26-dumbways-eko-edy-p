@@ -103,7 +103,7 @@ K3S_TOKEN=TOKEN_KAMU sh -
 ```
 - ![image](/task/stage-2/week-4/asset/join.gateway.png)
 
-- *Gateway*
+- *Master*
 ```
 # Verify
 kubectl get nodes
