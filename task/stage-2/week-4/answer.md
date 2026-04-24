@@ -118,8 +118,8 @@ app
 gateway
 
 # add label (optional)
-kubectl label node gateway node-role.kubernetes.io/gateway=true
-kubectl label node app node-role.kubernetes.io/app=true
+kubectl label node app node-role=app
+kubectl label node gateway node-role=gateway
 ```
 - ![image](/task/stage-2/week-4/asset/verify.png)
 
