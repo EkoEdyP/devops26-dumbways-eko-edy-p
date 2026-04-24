@@ -19,7 +19,7 @@
 
 ---
 
-1-2. membuat kubernetes cluster, yang di dalamnya terdapat 3 buah node as a master and worker.
+1-2. membuat kubernetes cluster, yang di dalamnya terdapat 3 buah node as a master and worker. dan nstall ingress nginx using manifest
 - *Master*
 ```
 # Set hostname
@@ -114,12 +114,35 @@ output Harus muncul:
 master
 app
 gateway
+
+# add label (optional)
+kubectl label node gateway node-role.kubernetes.io/gateway=true
+kubectl label node app node-role.kubernetes.io/app=true
 ```
 - ![image](/task/stage-2/week-4/asset/verify.png)
 
 ---
 
-3.
+3. Deploy wayshub-frontend dan wayshub-backend
+
+- *Master*
+
+- create wayshub-frontend.yaml dan wayshub-backend.yaml
+[wayshub-frontend.yaml yaml script]()
+[wayshub-backend.yaml yaml script]()
+
+```
+# Mendeploy konfigurasi frontend dan backend ke cluster Kubernetes
+kubectl apply -f wayshub-frontend.yaml
+kubectl apply -f wayshub-backend.yaml
+
+# Verify
+kubectl get pods
+kubectl get svc
+```
+
+---
+
 4.
 5.
 6.
