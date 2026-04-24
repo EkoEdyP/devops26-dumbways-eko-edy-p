@@ -117,7 +117,7 @@ master
 app
 gateway
 
-# add label (optional)
+# add label
 kubectl label node app node-role=app
 kubectl label node gateway node-role=gateway
 ```
@@ -140,8 +140,8 @@ kubectl apply -f wayshub-frontend.yaml
 kubectl apply -f wayshub-backend.yaml
 
 # Verify
-kubectl get pods
-kubectl get svc
+kubectl get pods -n apps -o wide
+kubectl get svc -n apps
 ```
 
 ---
