@@ -143,10 +143,13 @@ kubectl apply -f wayshub-backend.yaml
 kubectl get pods -n apps -o wide
 kubectl get svc -n apps
 ```
+- ![image](/task/stage-2/week-4/asset/apply.app.png)
+- ![image](/task/stage-2/week-4/asset/f.app.png)
+- ![image](/task/stage-2/week-4/asset/b.app.png)
 
 ---
 
-4.
+4. Setup persistent volume untuk database
 5.
 6.
 7.
