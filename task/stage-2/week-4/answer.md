@@ -71,7 +71,9 @@ spec:
   valuesContent: |-
     controller:
       service:
-        type: LoadBalancer
+        type: NodePort
+      nodeSelector:
+        node-role: gateway  
 EOF
 
 # Restart:
@@ -127,9 +129,10 @@ kubectl label node app node-role.kubernetes.io/app=true
 
 - *Master*
 
+- create Namespace `kubectl create namespace apps`
 - create wayshub-frontend.yaml dan wayshub-backend.yaml
-[wayshub-frontend.yaml yaml script]()
-[wayshub-backend.yaml yaml script]()
+  - [wayshub-frontend.yaml yaml script]()
+  - [wayshub-backend.yaml yaml script]()
 
 ```
 # Mendeploy konfigurasi frontend dan backend ke cluster Kubernetes
