@@ -86,6 +86,7 @@ kubectl get svc -n ingress-nginx
 # Ambil token (MASTER)
 sudo cat /var/lib/rancher/k3s/server/node-token
 ```
+- ![image](/task/stage-2/week-4/asset/verify.ingress.png)
 
 - *App*
 ```
