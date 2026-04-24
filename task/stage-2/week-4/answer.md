@@ -17,6 +17,8 @@
     - VM-2 for Worker(app worker)
     - VM-3 for Worker (gateway worker)
 
+---
+
 1-2. membuat kubernetes cluster, yang di dalamnya terdapat 3 buah node as a master and worker.
 - *Master*
 ```
@@ -114,6 +116,8 @@ app
 gateway
 ```
 - ![image](/task/stage-2/week-4/asset/verify.png)
+
+---
 
 3.
 4.
