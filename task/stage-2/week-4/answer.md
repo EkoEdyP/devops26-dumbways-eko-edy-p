@@ -89,21 +89,45 @@ sudo cat /var/lib/rancher/k3s/server/node-token
 
 - *App*
 ```
-# Join ke master
+# set hostname
 sudo hostnamectl set-hostname app
 
+# Join ke master
 curl -sfL https://get.k3s.io | K3S_URL=https://103.197.189.7:6443 \
 K3S_TOKEN=TOKEN_KAMU sh -
+
+# Edit/create config for disable traefik
+sudo nano /etc/rancher/k3s/config.yaml
+
+isi:
+disable:
+  - servicelb
+  - traefik
+
+# Restart:
+sudo systemctl restart k3s-agent  
 ```
 - ![image](/task/stage-2/week-4/asset/join.app.png)
 
 - *Gateway*
 ```
-# Join ke master
+# set hostname
 sudo hostnamectl set-hostname gateway
 
+# Join ke master
 curl -sfL https://get.k3s.io | K3S_URL=https://103.197.189.7:6443 \
 K3S_TOKEN=TOKEN_KAMU sh -
+
+# Edit/create config for disable traefik
+sudo nano /etc/rancher/k3s/config.yaml
+
+isi:
+disable:
+  - servicelb
+  - traefik
+
+# Restart:
+sudo systemctl restart k3s-agent  
 ```
 - ![image](/task/stage-2/week-4/asset/join.gateway.png)
 
@@ -151,6 +175,29 @@ kubectl get svc -n apps
 ---
 
 4. Setup persistent volume untuk database
+
+- *Master*
+
+- Set default local storage path
+```
+# Edit config k3s di master
+cat >> /etc/rancher/k3s/config.yaml << EOF
+default-local-storage-path: /mnt/data
+EOF
+
+# Restart k3s
+systemctl restart k3s
+```
+---
+
+- *App*
+```
+# create directory
+sudo mkdir -p /mnt/data/mysql
+sudo chmod 777 /mnt/data/mysql
+```
+
+
 5.
 6.
 7.
