@@ -49,7 +49,7 @@ disable:
   - servicelb
   - traefik
 
-# Restart:
+# Restart
 sudo systemctl restart k3s  
 
 # manifest HelmChart untuk Nginx Ingress
@@ -96,6 +96,17 @@ sudo hostnamectl set-hostname app
 # Join ke master
 curl -sfL https://get.k3s.io | K3S_URL=https://103.197.189.7:6443 \
 K3S_TOKEN=TOKEN_KAMU sh -
+
+# Edit/create config for disable traefik
+sudo nano /etc/rancher/k3s/config.yaml
+
+isi:
+disable:
+  - servicelb
+  - traefik
+
+# Restart
+sudo systemctl restart k3s-agent
 ```
 - ![image](/task/stage-2/week-4/asset/join.app.png)
 
@@ -107,6 +118,17 @@ sudo hostnamectl set-hostname gateway
 # Join ke master
 curl -sfL https://get.k3s.io | K3S_URL=https://103.197.189.7:6443 \
 K3S_TOKEN=TOKEN_KAMU sh -
+
+# Edit/create config for disable traefik
+sudo nano /etc/rancher/k3s/config.yaml
+
+isi:
+disable:
+  - servicelb
+  - traefik
+
+# Restart
+sudo systemctl restart k3s-agent
 ```
 - ![image](/task/stage-2/week-4/asset/join.gateway.png)
 
