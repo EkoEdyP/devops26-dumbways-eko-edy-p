@@ -80,7 +80,7 @@ EOF
 sudo systemctl restart k3s  
 
 # Verify
-kubectl -n ingress-nginx get pods
+kubectl -n ingress-nginx get pods -o wide
 kubectl get svc -n ingress-nginx
 
 # Ambil token (MASTER)
