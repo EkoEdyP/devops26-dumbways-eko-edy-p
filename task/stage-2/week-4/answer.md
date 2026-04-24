@@ -53,7 +53,7 @@ disable:
 sudo systemctl restart k3s  
 
 # manifest HelmChart untuk Nginx Ingress
-sudo tee /var/lib/rancher/k3s/server/manifests/nginx-ingress.yaml > /dev/null <<EOF
+cat <<EOF > /var/lib/rancher/k3s/server/manifests/nginx-ingress.yaml
 apiVersion: v1
 kind: Namespace
 metadata:
