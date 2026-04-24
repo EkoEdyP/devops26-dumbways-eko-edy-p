@@ -52,7 +52,7 @@ disable:
 # Restart:
 sudo systemctl restart k3s  
 
-# install ingress NGINX (AUTO DEPLOY K3s) pakai metode manifest auto deploy dari K3s (bukan helm manual)
+# manifest HelmChart untuk Nginx Ingress
 sudo tee /var/lib/rancher/k3s/server/manifests/nginx-ingress.yaml > /dev/null <<EOF
 apiVersion: v1
 kind: Namespace
