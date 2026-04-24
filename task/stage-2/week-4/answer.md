@@ -29,7 +29,7 @@ echo master | sudo tee /etc/hostname
 # Install K3s
 curl -sfL https://get.k3s.io | sh -
 
-# Fix kubectl permission
+# for kubectl permission on home atau bisa juga di sebut ngeREMOTE
 mkdir -p ~/.kube
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 sudo chown $USER:$USER ~/.kube/config
@@ -40,7 +40,7 @@ source ~/.bashrc
 kubectl get nodes
 kubectl get pods -A
 
-# Edit/create config:
+# Edit/create config for disable traefik
 sudo nano /etc/rancher/k3s/config.yaml
 
 isi:
