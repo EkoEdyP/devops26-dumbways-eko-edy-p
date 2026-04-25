@@ -185,16 +185,30 @@ kubectl get svc -n apps
 cat >> /etc/rancher/k3s/config.yaml << EOF
 default-local-storage-path: /mnt/data
 EOF
+```
+- ![image](/task/stage-2/week-4/asset/pvc.conf.png)
 
+```
 # Verify the storage class is available
 kubectl get storageClasses
 
 # Restart k3s
 systemctl restart k3s
 ```
+- ![image](/task/stage-2/week-4/asset/storage.class.png)
 
 - create pvc.yaml
-- [pvc.yaml yaml script](https://github.com/EkoEdyP/automation/blob/main/kubernetes/pvc.yaml)
+  - [pvc.yaml yaml script](https://github.com/EkoEdyP/automation/blob/main/kubernetes/pvc.yaml)
+
+```
+# Apply konfigurasi PVC
+kubectl apply -f pvc.yaml
+
+# Verify
+kubectl get pvc -n apps
+kubectl describe pvc data-pvc -n apps
+kubectl get pv
+```
 
 ---
 
