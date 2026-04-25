@@ -186,18 +186,17 @@ cat >> /etc/rancher/k3s/config.yaml << EOF
 default-local-storage-path: /mnt/data
 EOF
 
+# Verify the storage class is available
+kubectl get storageClasses
+
 # Restart k3s
 systemctl restart k3s
 ```
+
+- create pvc.yaml
+- [pvc.yaml yaml script](https://github.com/EkoEdyP/automation/blob/main/kubernetes/pvc.yaml)
+
 ---
-
-- *App*
-```
-# create directory
-sudo mkdir -p /mnt/data/mysql
-sudo chmod 777 /mnt/data/mysql
-```
-
 
 5.
 6.
