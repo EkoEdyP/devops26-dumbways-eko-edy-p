@@ -30,7 +30,7 @@ ufw disable
 
 # Set hostname
 hostnamectl set-hostname master
-echo master | sudo tee /etc/hostname
+echo master > /etc/hostname
 
 # Install K3s full or install K3s with disable traefik
 # full
