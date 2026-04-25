@@ -202,7 +202,7 @@ http://<IP-GATEWAY>:<NODEPORT>
 ```
 - ![image](/task/stage-2/week-4/asset/verify.ingress.png)
 
-
+---
 
 3. Deploy wayshub-frontend dan wayshub-backend
 
