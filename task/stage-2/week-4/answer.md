@@ -157,8 +157,8 @@ kubectl label node gateway node-role=gateway
 
 - create Namespace `kubectl create namespace apps`
 - create wayshub-frontend.yaml dan wayshub-backend.yaml
-  - [wayshub-frontend.yaml yaml script]()
-  - [wayshub-backend.yaml yaml script]()
+  - [wayshub-frontend.yaml yaml script](https://github.com/EkoEdyP/automation/blob/main/kubernetes/wayshub-frontend.yaml)
+  - [wayshub-backend.yaml yaml script](https://github.com/EkoEdyP/automation/blob/main/kubernetes/wayshub-backend.yaml)
 
 ```
 # Mendeploy konfigurasi frontend dan backend ke cluster Kubernetes
@@ -201,4 +201,13 @@ sudo chmod 777 /mnt/data/mysql
 
 5.
 6.
-7.
+7. setup ingress
+
+- eep.kubernetes.studentdumbways.my.id      → IP Gateway
+- api.eep.kubernetes.studentdumbways.my.id  → IP Gateway
+- [ingress.yaml yaml script](https://github.com/EkoEdyP/automation/blob/main/kubernetes/ingress.yaml)
+```
+# verify
+kubectl -n apps get ingress
+kubectl -n apps describe ingress app-ingress
+```
