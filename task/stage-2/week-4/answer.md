@@ -161,7 +161,10 @@ kubectl label node gateway node-role=gateway
 **2. install ingress nginx using manifest**
 - **Master**
 ```bash
-# manifest HelmChart untuk Nginx Ingress
+# log in as root
+sudo su
+
+# # Create ingress-nginx manifest (K3s will auto-deploy anything inside this directory)
 cat <<EOF > /var/lib/rancher/k3s/server/manifests/nginx-ingress.yaml
 apiVersion: v1
 kind: Namespace
@@ -185,12 +188,15 @@ spec:
         node-role: gateway
 EOF
 
-# Restart:
-sudo systemctl restart k3s  
+# Restart
+systemctl restart k3s  
 
-# Verify
+# Verify on terminal
 kubectl -n ingress-nginx get pods -o wide
 kubectl get svc -n ingress-nginx
+
+# verify on browser
+http://<IP-GATEWAY>:<NODEPORT>
 ```
 - ![image](/task/stage-2/week-4/asset/verify.ingress.png)
 
