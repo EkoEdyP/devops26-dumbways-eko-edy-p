@@ -94,6 +94,7 @@ sudo su
 
 # set hostname
 hostnamectl set-hostname app
+echo app > /etc/hostname
 
 # Join the master
 curl -sfL https://get.k3s.io | K3S_URL=https://103.197.189.7:6443 \
@@ -120,6 +121,7 @@ sudo su
 
 # set hostname
 hostnamectl set-hostname gateway
+echo gateway > /etc/hostname
 
 # Join the master
 curl -sfL https://get.k3s.io | K3S_URL=https://103.197.189.7:6443 \
