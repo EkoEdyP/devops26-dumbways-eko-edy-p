@@ -19,39 +19,148 @@
 
 ---
 
-1-2. membuat kubernetes cluster, yang di dalamnya terdapat 3 buah node as a master and worker. dan nstall ingress nginx using manifest
-- *Master*
-```
+**1. creating a Kubernetes cluster consisting of three nodes:** `one master (VM-1) and two workers (VM-2 and VM-3).`
+- **Master**
+```bash
+# log in as root
+sudo su
+
+# It is recommended to turn off ufw (uncomplicated firewall):
+ufw disable
+
 # Set hostname
-sudo hostnamectl set-hostname master
+hostnamectl set-hostname master
 echo master | sudo tee /etc/hostname
 
-# Install K3s
+# Install K3s full or install K3s with disable traefik
+# full
 curl -sfL https://get.k3s.io | sh -
+# disable traefik
+curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--disable traefik" sh -
 
-# for kubectl permission on home atau bisa juga di sebut ngeREMOTE
-mkdir -p ~/.kube
-sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
-sudo chown $USER:$USER ~/.kube/config
-echo 'export KUBECONFIG=~/.kube/config' >> ~/.bashrc
-source ~/.bashrc
+# verify for disable traefik
+- kubectl get pods -n kube-system | grep traefik
+    - # The output must be empty
 
-# Verify
+- kubectl get svc -n kube-system | grep traefik
+    - # The output must be empty
+
+- kubectl get helmchart -A | grep -i traefik
+    - # The output must be empty
+
+- ls /var/lib/rancher/k3s/server/manifests/
+  - # Make sure there is no traefik.yaml file
+
+- # Edit/create config for disable traefik
+  - nano /etc/rancher/k3s/config.yaml
+  
+  #Paste the script below
+  cluster-init: true
+  disable:
+    - traefik
+
+# Configure kubectl Access
+  # 1. To avoid the “kubectl: command not found” error in your home directory
+  echo 'export PATH=/usr/local/bin:$PATH' >> ~/.bashrc
+  source ~/.bashrc
+
+  # 2. To avoid the error “The connection to the server localhost:8080 was refused” or what is also known as a remote connection (from root to home and from the server to the local machine)
+  mkdir -p ~/.kube
+  sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+  sudo chown $USER:$USER ~/.kube/config
+  echo 'export KUBECONFIG=~/.kube/config' >> ~/.bashrc
+  source ~/.bashrc
+
+# Restart
+systemctl restart k3s  
+
+# log out as root
+exit
+
+# Verify on home
 kubectl get nodes
 kubectl get pods -A
 
-# Edit/create config for disable traefik
-sudo nano /etc/rancher/k3s/config.yaml
+# get token (MASTER)
+sudo cat /var/lib/rancher/k3s/server/node-token
+```
 
-isi:
-cluster-init: true
-disable:
-  - servicelb
-  - traefik
+---
+
+- **App**
+```bash
+# log in as root
+sudo su
+
+# set hostname
+hostnamectl set-hostname app
+
+# Join the master
+curl -sfL https://get.k3s.io | K3S_URL=https://103.197.189.7:6443 \
+K3S_TOKEN=YOUR_TOKEN sh -
+
+- # Edit/create config for disable traefik
+  - nano /etc/rancher/k3s/config.yaml
+  
+  #Paste the script below
+  disable:
+    - traefik
 
 # Restart
-sudo systemctl restart k3s  
+systemctl restart k3s-agent
+```
+- ![image](/task/stage-2/week-4/asset/join.app.png)
 
+---
+
+- **Gateway**
+```bash
+# log in as root
+sudo su
+
+# set hostname
+hostnamectl set-hostname gateway
+
+# Join the master
+curl -sfL https://get.k3s.io | K3S_URL=https://103.197.189.7:6443 \
+K3S_TOKEN=YOUR_TOKEN sh -
+
+- # Edit/create config for disable traefik
+  - nano /etc/rancher/k3s/config.yaml
+  
+  #Paste the script below
+  disable:
+    - traefik
+
+# Restart
+systemctl restart k3s-agent
+```
+- ![image](/task/stage-2/week-4/asset/join.gateway.png)
+
+---
+
+- **Master**
+```
+# Verify
+kubectl get nodes
+
+#The output should be:
+master
+app
+gateway
+
+# add label
+kubectl label node app node-role=app
+kubectl label node gateway node-role=gateway
+```
+- ![image](/task/stage-2/week-4/asset/verify.png)
+- ![image](/task/stage-2/week-4/asset/label.png)
+
+---
+
+**2. install ingress nginx using manifest**
+- **Master**
+```bash
 # manifest HelmChart untuk Nginx Ingress
 cat <<EOF > /var/lib/rancher/k3s/server/manifests/nginx-ingress.yaml
 apiVersion: v1
@@ -73,7 +182,7 @@ spec:
       service:
         type: NodePort
       nodeSelector:
-        node-role: gateway  
+        node-role: gateway
 EOF
 
 # Restart:
@@ -82,74 +191,10 @@ sudo systemctl restart k3s
 # Verify
 kubectl -n ingress-nginx get pods -o wide
 kubectl get svc -n ingress-nginx
-
-# Ambil token (MASTER)
-sudo cat /var/lib/rancher/k3s/server/node-token
 ```
 - ![image](/task/stage-2/week-4/asset/verify.ingress.png)
 
-- *App*
-```
-# set hostname
-sudo hostnamectl set-hostname app
 
-# Join ke master
-curl -sfL https://get.k3s.io | K3S_URL=https://103.197.189.7:6443 \
-K3S_TOKEN=TOKEN_KAMU sh -
-
-# Edit/create config for disable traefik
-sudo nano /etc/rancher/k3s/config.yaml
-
-isi:
-disable:
-  - servicelb
-  - traefik
-
-# Restart
-sudo systemctl restart k3s-agent
-```
-- ![image](/task/stage-2/week-4/asset/join.app.png)
-
-- *Gateway*
-```
-# set hostname
-sudo hostnamectl set-hostname gateway
-
-# Join ke master
-curl -sfL https://get.k3s.io | K3S_URL=https://103.197.189.7:6443 \
-K3S_TOKEN=TOKEN_KAMU sh -
-
-# Edit/create config for disable traefik
-sudo nano /etc/rancher/k3s/config.yaml
-
-isi:
-disable:
-  - servicelb
-  - traefik
-
-# Restart
-sudo systemctl restart k3s-agent
-```
-- ![image](/task/stage-2/week-4/asset/join.gateway.png)
-
-- *Master*
-```
-# Verify
-kubectl get nodes
-
-output Harus muncul:
-master
-app
-gateway
-
-# add label
-kubectl label node app node-role=app
-kubectl label node gateway node-role=gateway
-```
-- ![image](/task/stage-2/week-4/asset/verify.png)
-- ![image](/task/stage-2/week-4/asset/label.png)
-
----
 
 3. Deploy wayshub-frontend dan wayshub-backend
 
