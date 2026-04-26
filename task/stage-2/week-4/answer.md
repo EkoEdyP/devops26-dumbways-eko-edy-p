@@ -204,6 +204,8 @@ kubectl get helmchart -n ingress-nginx
 kubectl get pods -n ingress-nginx -o wide
 # Check services in ingress-nginx namespace
 kubectl get svc -n ingress-nginx
+# get all ingress-nginx namespace
+kubectl -n ingress-nginx get all
 
 # verify on browser
 http://<IP-GATEWAY>:<NODEPORT>
