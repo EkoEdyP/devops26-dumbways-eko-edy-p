@@ -151,7 +151,11 @@ master
 app
 gateway
 
-# add label
+# add role
+kubectl label node app node-role.kubernetes.io/app=true
+kubectl label node gateway node-role.kubernetes.io/gateway=true
+
+# add label for `nodeSelector`
 kubectl label node app node-role=app
 kubectl label node gateway node-role=gateway
 ```
