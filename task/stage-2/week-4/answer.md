@@ -59,6 +59,12 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--disable traefik" sh -
   disable:
     - traefik
 
+# Restart
+systemctl restart k3s
+
+# log out as root
+exit
+
 # Configure kubectl Access
   # 1. To avoid the “kubectl: command not found” error in your home directory
   echo 'export PATH=/usr/local/bin:$PATH' >> ~/.bashrc
@@ -70,12 +76,6 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--disable traefik" sh -
   sudo chown $USER:$USER ~/.kube/config
   echo 'export KUBECONFIG=~/.kube/config' >> ~/.bashrc
   source ~/.bashrc
-
-# Restart
-systemctl restart k3s  
-
-# log out as root
-exit
 
 # Verify on home
 kubectl get nodes
