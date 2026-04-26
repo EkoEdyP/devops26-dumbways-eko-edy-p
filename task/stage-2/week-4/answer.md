@@ -198,7 +198,11 @@ EOF
 systemctl restart k3s  
 
 # Verify on terminal
-kubectl -n ingress-nginx get pods -o wide
+# Check HelmChart status
+kubectl get helmchart -n ingress-nginx
+# Check which node the pod is running on
+kubectl get pods -n ingress-nginx -o wide
+# Check services in ingress-nginx namespace
 kubectl get svc -n ingress-nginx
 
 # verify on browser
