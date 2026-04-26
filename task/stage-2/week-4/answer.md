@@ -101,7 +101,7 @@ curl -sfL https://get.k3s.io | K3S_URL=https://103.197.189.7:6443 \
 K3S_TOKEN=YOUR_TOKEN sh -
 
 - # Edit/create config for disable traefik
-  - nano /etc/rancher/k3s/config.yaml
+  - mkdir -p /etc/rancher/k3s && nano /etc/rancher/k3s/config.yaml
   
   #Paste the script below
   disable:
@@ -128,7 +128,7 @@ curl -sfL https://get.k3s.io | K3S_URL=https://103.197.189.7:6443 \
 K3S_TOKEN=YOUR_TOKEN sh -
 
 - # Edit/create config for disable traefik
-  - nano /etc/rancher/k3s/config.yaml
+  - mkdir -p /etc/rancher/k3s && nano /etc/rancher/k3s/config.yaml
   
   #Paste the script below
   disable:
