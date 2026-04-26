@@ -57,6 +57,7 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--disable traefik" sh -
   #Paste the script below
   cluster-init: true
   disable:
+    - servicelb
     - traefik
 
 # Restart
@@ -105,6 +106,7 @@ K3S_TOKEN=YOUR_TOKEN sh -
   
   #Paste the script below
   disable:
+    - servicelb
     - traefik
 
 # Restart
@@ -132,6 +134,7 @@ K3S_TOKEN=YOUR_TOKEN sh -
   
   #Paste the script below
   disable:
+    - servicelb
     - traefik
 
 # Restart
